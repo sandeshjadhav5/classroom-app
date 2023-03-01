@@ -1,0 +1,141 @@
+.logoImg {
+  margin: auto;
+  width: 5%;
+  margin-top: 5rem;
+}
+.logoImg img {
+  width: 4rem;
+}
+
+.heading {
+  margin-top: 3rem;
+}
+.heading h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #202124;
+}
+.headingText {
+  width: 60%;
+  margin: 1rem auto 1rem auto;
+}
+.headingText p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  font-weight: 500;
+}
+
+.btn-div {
+  width: 40%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+}
+.btn-solid-lg {
+  margin: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a73e8;
+  color: #ffffff;
+  font-size: large;
+  transition: all 0.2s;
+}
+.btn-solid-rh {
+  margin: 0.5rem;
+  padding: 0.8rem;
+  border: solid grey 0.2px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #1a73e8;
+  font-size: large;
+  transition: all 0.2s;
+}
+.btn-solid-lg:hover {
+  background-color: #2561af;
+  cursor: pointer;
+}
+.btn-solid-rh:hover {
+  cursor: pointer;
+  color: #2b9145;
+}
+
+.homePageCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+  gap: 3rem;
+  margin: auto;
+  text-align: center;
+  line-height: 3rem;
+}
+.homePageCards p {
+  line-height: 1.5rem;
+  color: #7b7f83;
+  font-weight: 500;
+}
+
+.learnImg {
+  width: 60%;
+  margin: auto;
+}
+.learnImg img {
+  width: 100%;
+}
+
+.detailsOne {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #f9fbff;
+  padding: 2rem;
+  gap: 3rem;
+  margin: auto;
+}
+.detailsOne h1 {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: #202124;
+}
+.detailsOne img {
+  width: 100%;
+}
+.detailsOne ul,
+li {
+  line-height: 3rem;
+  color: #7b7f83;
+  font-weight: 600;
+}
+
+/* M  E  D  I  A     Q  U  R  I  E  S */
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .homePageCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detailsOne {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .detailsOne ul,
+  li {
+    line-height: 3rem;
+    color: #7b7f83;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 600px) {
+  .homePageCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .detailsOne {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .detailsOne ul,
+  li {
+    line-height: 2rem;
+    color: #7b7f83;
+    font-weight: 400;
+  }
+}

@@ -18,13 +18,10 @@ function Navbar() {
       <header>
         <nav className="navbar">
           <p className="nav-branding">
-            <Link>Google Classroom</Link>
+            <Link to="/">You Can Test !</Link>
           </p>
 
           <ul className="nav-menu">
-            <li className="nav-item" onClick={handleClose}>
-              <Link to="/">Home</Link>
-            </li>
             <li className="nav-item" onClick={handleClose}>
               <Link to="/login">Login</Link>
             </li>

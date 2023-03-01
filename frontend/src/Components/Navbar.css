@@ -6,6 +6,8 @@
 
 header {
   background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 li {
@@ -78,7 +80,7 @@ a {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 50px;
     gap: 0;
     flex-direction: column;
     background-color: black;
