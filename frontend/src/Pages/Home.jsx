@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div>
+    <div className="main-home-div">
       <div className="logoImg">
-        <img src="https://edu.google.com/assets/icons/google-brands/classroom.svg" />
+        <img src="https://www.testim.io/wp-content/uploads/2020/05/Testim-HItsubscribe-Who-Performs-Software-Testing-in-2020_572_450.jpg" />
       </div>
       <div className="heading">
         <h1>Where teaching and learning come together</h1>
@@ -109,6 +109,36 @@ function Home() {
         </div>
         <div>
           <img src="https://lh3.googleusercontent.com/eiuQVtahi5MknaMtb9J3sguRdSN1Zi-mjfPBkiTSFvzUZfrmVfgOTsr8vus3QFRaDoVPdWEdZPhydGAo8eZ3AjImKeMEUxFRVdPam2V0P26wMc3oBg=w1296-v1-e30" />
+        </div>
+      </div>
+      <div className="detailsOne">
+        <div>
+          <img src="https://lh3.googleusercontent.com/pVscMUbEHu5KIwTrn0OvGO77FHFMZdCrFLUlsH0r2BdI4o2hDE-1m6RcUOkOmsSDEL-iUf4qH2o79IUzBZWMOIZPDhuDMUR_q6oXDMY5yN1U6C5s-A=w1296-v1-e30" />
+        </div>
+        <div>
+          <h4>ENRICH</h4>
+          <h1>Enhance student learning experiences</h1>
+          <ul>
+            All editions
+            <li>
+              - Switch from class to assignment to student in just a few clicks
+            </li>
+            <li>
+              - Track student progress in your gradebook and export scores to
+              your school’s student information system (SIS)
+            </li>
+            <li>
+              - Keep grading consistent and transparent with rubrics displayed
+              alongside student work
+            </li>
+            <li>
+              - Store frequently used phrases in a customizable comment bank
+            </li>
+            <li>
+              - Prepare and schedule tasks, assignments, and quizzes across
+              multiple classes
+            </li>
+          </ul>
         </div>
       </div>
     </div>

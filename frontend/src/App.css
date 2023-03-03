@@ -1,7 +1,10 @@
+.main-home-div {
+  background-image: linear-gradient(to bottom right, #2a85a2, #a9dbe6, #348faa);
+}
 .logoImg {
   margin: auto;
   width: 5%;
-  margin-top: 5rem;
+  padding-top: 5rem;
 }
 .logoImg img {
   width: 4rem;
@@ -106,6 +109,46 @@ li {
   line-height: 3rem;
   color: #7b7f83;
   font-weight: 600;
+}
+
+/* LOGIN FORM CSS */
+.formDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 0.5rem;
+  background-color: azure;
+}
+.InputSubmitBtn {
+  margin-top: 1rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #a9dbe6;
+}
+.InputSubmitBtn:hover {
+  background-color: #588691;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.formDiv input,
+select {
+  height: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.loginHeading {
+  text-align: center;
+  margin-top: 3rem;
+}
+.formDiv span {
+  font-weight: 500;
 }
 
 /* M  E  D  I  A     Q  U  R  I  E  S */
