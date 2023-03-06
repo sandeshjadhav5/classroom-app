@@ -166,7 +166,7 @@ select {
 }
 .loginHeading {
   text-align: center;
-  margin: 2rem;
+  margin: 1rem;
 }
 .formDiv span {
   font-weight: 500;
@@ -196,6 +196,15 @@ select {
     color: #7b7f83;
     font-weight: 500;
   }
+  .formDiv {
+    width: 40%;
+    margin: auto;
+    padding: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 0.5rem;
+    background-color: azure;
+  }
 }
 
 @media (max-width: 600px) {
@@ -219,5 +228,14 @@ select {
     line-height: 2rem;
     color: #7b7f83;
     font-weight: 400;
+  }
+  .formDiv {
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 0.5rem;
+    background-color: azure;
   }
 }

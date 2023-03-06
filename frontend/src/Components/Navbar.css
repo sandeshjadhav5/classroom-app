@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.navbar-main {
+  position: fixed;
+  width: 100%;
+}
 header {
   background-color: rgb(255, 254, 254);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,

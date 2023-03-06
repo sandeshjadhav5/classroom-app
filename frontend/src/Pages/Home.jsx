@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 function Home() {
   return (
     <div>
+      <Navbar />
       <div className="main-home-div">
         <div className="logoImg">
           <img src="https://www.testim.io/wp-content/uploads/2020/05/Testim-HItsubscribe-Who-Performs-Software-Testing-in-2020_572_450.jpg" />

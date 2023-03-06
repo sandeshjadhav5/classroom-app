@@ -1,0 +1,97 @@
+.classSvg {
+  width: 30%;
+  margin: auto;
+}
+.classSvg img {
+  width: 100%;
+}
+.btn-create {
+  text-align: center;
+}
+.css-button-arrow--black {
+  text-align: center;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #343a40;
+}
+.css-button-arrow--black:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left: 8px;
+}
+.css-button-arrow--black:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.css-button-arrow--black:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+h1 {
+  text-align: center;
+  color: green;
+  font-size: 2rem;
+}
+.create-form {
+  width: 22%;
+  margin: auto;
+  padding: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 0.5rem;
+  background-color: azure;
+}
+.InputSubmitBtn {
+  margin-top: 1rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #a9dbe6;
+}
+.InputSubmitBtn:hover {
+  background-color: #588691;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.create-form input,
+select {
+  height: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.create-form span {
+  font-weight: 500;
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .classSvg {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .classSvg {
+    width: 60%;
+    margin: auto;
+  }
+}

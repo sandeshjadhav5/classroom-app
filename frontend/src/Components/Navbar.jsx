@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div className="navbar-main">
       <header>
         <nav className="navbar">
           <p className="nav-branding">
