@@ -49,25 +49,26 @@ h1 {
   text-align: center;
   color: green;
   font-size: 2rem;
+  margin: 2rem;
 }
 .create-form {
-  width: 22%;
+  width: 50%;
   margin: auto;
   padding: 2rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 0.5rem;
-  background-color: azure;
+  background-color: bisque;
 }
 .InputSubmitBtn {
   margin-top: 1rem;
   height: 3rem;
   border-radius: 1rem;
   border: none;
-  background-color: #a9dbe6;
+  background-color: #18bb5c;
 }
 .InputSubmitBtn:hover {
-  background-color: #588691;
+  background-color: #1ea566;
   color: white;
   cursor: pointer;
   font-weight: 600;
@@ -82,10 +83,27 @@ select {
 .create-form span {
   font-weight: 500;
 }
+
+.add-class-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.add-class-grid img {
+  width: 100%;
+}
 @media (min-width: 600px) and (max-width: 900px) {
   .classSvg {
     width: 50%;
     margin: auto;
+  }
+  .create-form {
+    width: 50%;
+  }
+  .add-class-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -93,5 +111,13 @@ select {
   .classSvg {
     width: 60%;
     margin: auto;
+  }
+  .create-form {
+    width: 65%;
+  }
+  .add-class-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
