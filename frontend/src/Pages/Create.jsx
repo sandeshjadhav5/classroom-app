@@ -6,7 +6,7 @@ function Create() {
   return (
     <div>
       <div>
-        <h1>Create Class</h1>
+        <h1>Create Testroom</h1>
       </div>
       <div className="add-class-grid">
         <div>
