@@ -1,13 +1,27 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import { useSelector, useDispatch } from "react-redux";
+import { loginFunction } from "../Redux/Authreducer/action";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(email, password);
+    const payload = { email, password };
+
+    if (email == "admin@gmail.com" && password == "admin123") {
+      navigate("/admin");
+    } else {
+      dispatch(loginFunction(payload));
+    }
   };
 
   return (
@@ -30,7 +44,12 @@ function Login() {
             </div>
             <div>
               <span>Password</span>
-              <input placeholder="password" required />
+              <input
+                placeholder="password"
+                required
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <div>
               <input type="submit" className="InputSubmitBtn" />
