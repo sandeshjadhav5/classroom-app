@@ -2,11 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import { useSelector, useDispatch } from "react-redux";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const isRegistered = useSelector((state) => state.Authreducer);
+  console.log(isRegistered);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };

@@ -5,6 +5,7 @@ import Register from "./Register";
 import Login from "./Login";
 import Admin from "./Admin";
 import Create from "./Create";
+import Tests from "./Tests";
 
 function AllRoutes() {
   return (
@@ -15,6 +16,7 @@ function AllRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/tests" element={<Tests />} />
       </Routes>
     </div>
   );
