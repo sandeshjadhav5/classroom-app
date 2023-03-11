@@ -13,7 +13,7 @@ function Login() {
 
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const token = JSON.parse(localStorage.getItem("token")) || "";
-  console.log("token", token);
+  console.log("token ->", token);
   console.log("isAuth", isAuth);
 
   const navigate = useNavigate();

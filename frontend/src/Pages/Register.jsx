@@ -3,17 +3,27 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { useSelector, useDispatch } from "react-redux";
+//import { loginFunction } from "../Redux/AuthReducer/action";
+import { registerFunction } from "../Redux/AuthReducer/action";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const isRegistered = useSelector((state) => state.Authreducer);
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const isRegistered = useSelector((state) => state.AuthReducer.isRegistered);
   console.log(isRegistered);
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const payload = { name, email, password };
+    if (payload) {
+      dispatch(registerFunction(payload));
+    }
   };
 
   return (
@@ -29,7 +39,7 @@ function Register() {
             <span>Name</span>
             <input
               placeholder="Enter your Name"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
@@ -39,16 +49,27 @@ function Register() {
               placeholder="email id"
               onChange={(e) => setEmail(e.target.value)}
               required
+              type="email"
             />
           </div>
           <div>
             <span>Password</span>
-            <input placeholder="password" required />
+            <input
+              className="password-input"
+              type={showPassword ? "text" : "password"}
+              placeholder="password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
+
           <div>
             <input type="submit" className="InputSubmitBtn" />
           </div>
         </form>
+        <button onClick={toggleShowPassword}>
+          {showPassword ? "Hide" : "Show"} Password
+        </button>
         <p>
           Already Have a Account ? <Link to="/login">Login</Link>
         </p>

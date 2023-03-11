@@ -28,23 +28,25 @@ const registerFailure = () => {
 const loginFunction = (payload) => (dispatch) => {
   dispatch(userLoginReq());
   return axios
-    .post(`https://classroom-app-backend.onrender.com/users/login`, payload)
+    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/login`, payload)
     .then((res) => {
       console.log(res);
       let token = res.data.token;
       if (token) {
         localStorage.setItem("token", JSON.stringify(res.data.token));
-        var x = document.getElementById("snackbar");
+        let x = document.getElementById("snackbar");
         x.className = "show";
-        x.innerText = res.data;
+        x.innerText = res.data.msg;
+        x.style.backgroundColor = "green";
         setTimeout(function () {
           x.className = x.className.replace("show", "");
+          dispatch(userLoginSuccess());
         }, 3000);
-        dispatch(userLoginSuccess());
       } else if (res.data == "Login Failed") {
         dispatch(userLoginFailure());
-        var x = document.getElementById("snackbar");
+        let x = document.getElementById("snackbar");
         x.innerText = res.data;
+        x.style.backgroundColor = "red";
         x.className = "show";
         setTimeout(function () {
           x.className = x.className.replace("show", "");
@@ -53,8 +55,27 @@ const loginFunction = (payload) => (dispatch) => {
     })
     .catch((err) => {
       console.log(err);
-      alert("Failed To Login");
+      let x = document.getElementById("snackbar");
+      x.innerText = "Error Loggin In";
+      x.style.backgroundColor = "#1A5276";
+      x.className = "show";
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+      }, 3000);
       dispatch(userLoginFailure());
+    });
+};
+
+const registerFunction = (payload) => (dispatch) => {
+  dispatch(registerReq());
+
+  return axios
+    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/register`, payload)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
 
@@ -66,4 +87,5 @@ export {
   registerSuccess,
   registerFailure,
   loginFunction,
+  registerFunction,
 };
