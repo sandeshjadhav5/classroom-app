@@ -31,11 +31,29 @@ const loginFunction = (payload) => (dispatch) => {
     .post(`https://classroom-app-backend.onrender.com/users/login`, payload)
     .then((res) => {
       console.log(res);
-      localStorage.setItem("token", JSON.stringify(res.data.token));
-      dispatch(userLoginSuccess());
+      let token = res.data.token;
+      if (token) {
+        localStorage.setItem("token", JSON.stringify(res.data.token));
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        x.innerText = res.data;
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+        }, 3000);
+        dispatch(userLoginSuccess());
+      } else if (res.data == "Login Failed") {
+        dispatch(userLoginFailure());
+        var x = document.getElementById("snackbar");
+        x.innerText = res.data;
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+        }, 3000);
+      }
     })
     .catch((err) => {
       console.log(err);
+      alert("Failed To Login");
       dispatch(userLoginFailure());
     });
 };
