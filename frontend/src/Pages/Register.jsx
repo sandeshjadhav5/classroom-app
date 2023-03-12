@@ -74,6 +74,7 @@ function Register() {
           Already Have a Account ? <Link to="/login">Login</Link>
         </p>
       </div>
+      <div id="snackbar"></div>
     </div>
   );
 }

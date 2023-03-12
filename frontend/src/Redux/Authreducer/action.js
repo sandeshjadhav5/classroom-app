@@ -73,9 +73,36 @@ const registerFunction = (payload) => (dispatch) => {
     .post(`https://odd-tan-mackerel-wig.cyclic.app/users/register`, payload)
     .then((res) => {
       console.log(res);
+      if (res.data == "User Registered") {
+        let x = document.getElementById("snackbar");
+        x.className = "show";
+        x.innerText = res.data;
+        x.style.backgroundColor = "green";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+          dispatch(userLoginSuccess());
+        }, 3000);
+      } else {
+        let x = document.getElementById("snackbar");
+        x.className = "show";
+        x.innerText = "Failed To Register";
+        x.style.backgroundColor = "red";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+          dispatch(userLoginSuccess());
+        }, 3000);
+      }
     })
     .catch((err) => {
       console.log(err);
+      let x = document.getElementById("snackbar");
+      x.className = "show";
+      x.innerText = "Error in Registering";
+      x.style.backgroundColor = "red";
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+        dispatch(userLoginSuccess());
+      }, 3000);
     });
 };
 
