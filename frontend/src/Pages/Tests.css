@@ -1,0 +1,58 @@
+.main-cards-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 95%;
+  margin: auto;
+}
+.test-card {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+}
+.test-card-name {
+  font-size: larger;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: white;
+}
+.test-card-section {
+  font-size: medium;
+  margin-top: 0.5rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.test-card .imgDiv {
+  width: 25%;
+  margin: -15% 10% 10% 70%;
+}
+.test-card-subject {
+  padding: 1rem;
+}
+.upper-test-card {
+  padding: 1rem;
+  border-radius: 1rem 1rem 0 0;
+}
+.imgDiv img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+/* M  E  D  I  A     Q  U  R  I  E  S */
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .main-cards-div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-cards-div {
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+  }
+  .test-card .imgDiv {
+    width: 20%;
+    margin: -10% 10% 10% 70%;
+  }
+}
