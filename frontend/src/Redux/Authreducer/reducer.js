@@ -40,6 +40,12 @@ const reducer = (state = initialState, action) => {
         isRegisteredLoading: false,
         isRegisteredFailure: true,
       };
+    case types.LOGOUT_USER:
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        isAuth: false,
+      };
     default:
       return state;
   }

@@ -5,9 +5,17 @@
   width: 95%;
   margin: auto;
 }
+h2 {
+  text-align: center;
+  margin: 1rem;
+  font-family: sans-serif;
+}
 .test-card {
   border: 1px solid #ccc;
   border-radius: 1rem;
+}
+.test-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .test-card-name {
   font-size: larger;
@@ -37,7 +45,17 @@
   width: 100%;
   border-radius: 100%;
 }
+.subject-div {
+  border-top: solid 1px #ccc;
+}
 
+.loader-gif {
+  margin: auto;
+  width: 10%;
+}
+.loader-gif img {
+  width: 100%;
+}
 /* M  E  D  I  A     Q  U  R  I  E  S */
 
 @media (min-width: 600px) and (max-width: 900px) {

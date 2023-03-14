@@ -16,7 +16,9 @@ function TestItem({ name, section, subject, _id }) {
         <div className="imgDiv">
           <img src="https://lh3.googleusercontent.com/a/default-user=s75-c" />
         </div>
-        <p className="test-card-subject">{subject}</p>
+        <div className="subject-div">
+          <p className="test-card-subject">{subject}</p>
+        </div>
       </div>
     </div>
   );

@@ -25,6 +25,10 @@ const registerFailure = () => {
   return { type: types.REGISTER_FAILURE };
 };
 
+const logoutUser = () => {
+  return { type: types.LOGOUT_USER };
+};
+
 const loginFunction = (payload) => (dispatch) => {
   dispatch(userLoginReq());
   return axios
@@ -115,4 +119,5 @@ export {
   registerFailure,
   loginFunction,
   registerFunction,
+  logoutUser,
 };

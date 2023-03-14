@@ -6,7 +6,12 @@ const getTests = (payload) => {
   return { type: types.GET_TESTS, payload };
 };
 
+const getTestsLoading = () => {
+  return { type: types.GET_TESTS_LOADING };
+};
+
 const getAllTests = (payload) => (dispatch) => {
+  dispatch(getTestsLoading());
   const token = JSON.parse(localStorage.getItem("token")) || "";
   console.log("token is ->", token);
   return axios
