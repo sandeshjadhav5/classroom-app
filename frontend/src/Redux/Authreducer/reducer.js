@@ -7,7 +7,9 @@ const initialState = {
   isAuthFailure: false,
   isRegisteredLoading: false,
   isRegisteredFailure: false,
+  isAdminLogin: false,
   token: "",
+  role: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,13 +18,21 @@ const reducer = (state = initialState, action) => {
     case types.LOGIN_USER_REQUEST:
       return { ...state, isAuthLoading: true };
     case types.LOGIN_USER_SUCCESS:
-      return { ...state, isAuth: true, isAuthLoading: false };
+      return { ...state, isAuth: true, isAuthLoading: false, role: "user" };
     case types.LOGIN_USER_FAILURE:
       return {
         ...state,
         isAuthFailure: true,
         isAuthLoading: false,
         isAuth: false,
+      };
+    case types.ADMIN_LOGIN:
+      return {
+        ...state,
+        role: "admin",
+        isAdminLogin: true,
+        isAuth: true,
+        isRegistered: true,
       };
     case types.REGISTER_REQUEST:
       return { ...state, isRegistered: false, isRegisteredLoading: true };
@@ -41,10 +51,10 @@ const reducer = (state = initialState, action) => {
         isRegisteredFailure: true,
       };
     case types.LOGOUT_USER:
-      localStorage.removeItem("token");
       return {
         ...state,
         isAuth: false,
+        isAdminLogin: false,
       };
     default:
       return state;

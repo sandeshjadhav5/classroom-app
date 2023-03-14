@@ -26,7 +26,28 @@ const registerFailure = () => {
 };
 
 const logoutUser = () => {
+  localStorage.removeItem("token");
   return { type: types.LOGOUT_USER };
+};
+
+const adminLogin = (payload) => {
+  return { type: types.ADMIN_LOGIN };
+};
+
+const adminLoginFunction = (payload) => (dispatch) => {
+  return axios
+    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/login`, payload)
+    .then((res) => {
+      console.log(res);
+      let token = res.data.token;
+      if (token) {
+        localStorage.setItem("token", JSON.stringify(res.data.token));
+        dispatch(adminLogin);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 const loginFunction = (payload) => (dispatch) => {
@@ -72,7 +93,6 @@ const loginFunction = (payload) => (dispatch) => {
 
 const registerFunction = (payload) => (dispatch) => {
   dispatch(registerReq());
-
   return axios
     .post(`https://odd-tan-mackerel-wig.cyclic.app/users/register`, payload)
     .then((res) => {
@@ -120,4 +140,6 @@ export {
   loginFunction,
   registerFunction,
   logoutUser,
+  adminLogin,
+  adminLoginFunction,
 };

@@ -12,8 +12,7 @@ const getTestsLoading = () => {
 
 const getAllTests = (payload) => (dispatch) => {
   dispatch(getTestsLoading());
-  const token = JSON.parse(localStorage.getItem("token")) || "";
-  console.log("token is ->", token);
+  var token = JSON.parse(localStorage.getItem("token")) || "";
   return axios
     .get(`https://odd-tan-mackerel-wig.cyclic.app/tests`, {
       headers: {
@@ -28,4 +27,21 @@ const getAllTests = (payload) => (dispatch) => {
       console.log(err);
     });
 };
-export { getTests, getAllTests };
+
+const addTest = (data) => (dispatch) => {
+  var token = JSON.parse(localStorage.getItem("token")) || "";
+  console.log("token is ->", token);
+  return axios
+    .post(`https://odd-tan-mackerel-wig.cyclic.app/tests/create`, data, {
+      headers: {
+        Authorization: token,
+      },
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+export { getTests, getAllTests, addTest };

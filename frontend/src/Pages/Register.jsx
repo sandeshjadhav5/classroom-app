@@ -61,15 +61,16 @@ function Register() {
               required
               onChange={(e) => setPassword(e.target.value)}
             />
+            <p onClick={toggleShowPassword} className="show-hide">
+              {showPassword ? "Hide" : "Show"}
+            </p>
           </div>
 
           <div>
             <input type="submit" className="InputSubmitBtn" />
           </div>
         </form>
-        <button onClick={toggleShowPassword}>
-          {showPassword ? "Hide" : "Show"} Password
-        </button>
+
         <p>
           Already Have a Account ? <Link to="/login">Login</Link>
         </p>

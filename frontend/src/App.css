@@ -172,7 +172,12 @@ select {
 .formDiv span {
   font-weight: 500;
 }
-
+.show-hide {
+  margin: -18% 10% 10% 80%;
+  font-weight: 600;
+  font-size: small;
+  cursor: pointer;
+}
 #snackbar {
   visibility: hidden;
   min-width: 250px;
@@ -238,7 +243,11 @@ select {
   }
 }
 /* M  E  D  I  A     Q  U  R  I  E  S */
-
+@media (min-width: 900px) and (max-width: 1100px) {
+  .show-hide {
+    margin: -28% 10% 10% 72%;
+  }
+}
 @media (min-width: 600px) and (max-width: 900px) {
   .homePageCards {
     grid-template-columns: repeat(2, 1fr);
@@ -269,6 +278,9 @@ select {
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 0.5rem;
     background-color: azure;
+  }
+  .show-hide {
+    margin: -18% 10% 10% 80%;
   }
 }
 

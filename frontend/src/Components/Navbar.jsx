@@ -23,7 +23,8 @@ function Navbar() {
   };
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const isRegistered = useSelector((state) => state.AuthReducer.isRegistered);
-  console.log("isAuth - > ", isAuth, isRegistered);
+  const role = useSelector((state) => state.AuthReducer.role);
+  console.log("isAuth - > ", isAuth, isRegistered, role);
 
   return (
     <div className="navbar-main">
@@ -42,6 +43,11 @@ function Navbar() {
             {!isRegistered && !isAuth && (
               <li className="nav-item" onClick={handleClose}>
                 <Link to="/register">Register</Link>
+              </li>
+            )}
+            {role == "admin" && (
+              <li className="nav-item" onClick={handleClose}>
+                <Link to="/create">Create Test</Link>
               </li>
             )}
             {isAuth && (
