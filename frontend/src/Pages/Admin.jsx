@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Admin.css";
 import { Link, useNavigate } from "react-router-dom";
 import classSvg from "../assets/classroomPng.png";
@@ -12,9 +12,12 @@ function Admin() {
   const isLoading = useSelector((state) => state.AppReducer.isLoading);
   const isAdminLogin = useSelector((state) => state.AuthReducer.isAdminLogin);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
-  if (!isAdminLogin || !isAuth) {
-    return navigate("/login");
-  }
+
+  useEffect(() => {
+    if (!isAdminLogin || !isAuth) {
+      return navigate("/login");
+    }
+  }, []);
   return (
     <div>
       <Navbar />

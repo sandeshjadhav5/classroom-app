@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -24,7 +24,7 @@ function Navbar() {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const isRegistered = useSelector((state) => state.AuthReducer.isRegistered);
   const role = useSelector((state) => state.AuthReducer.role);
-  console.log("isAuth - > ", isAuth, isRegistered, role);
+  //console.log("isAuth - > ", isAuth, isRegistered, role);
 
   return (
     <div className="navbar-main">

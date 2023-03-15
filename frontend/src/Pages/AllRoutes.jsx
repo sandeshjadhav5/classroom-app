@@ -6,6 +6,7 @@ import Login from "./Login";
 import Admin from "./Admin";
 import Create from "./Create";
 import Tests from "./Tests";
+import SingeTest from "./SingeTest";
 
 function AllRoutes() {
   return (
@@ -17,6 +18,7 @@ function AllRoutes() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/create" element={<Create />} />
         <Route path="/tests" element={<Tests />} />
+        <Route path="tests/:id" element={<SingeTest />} />
       </Routes>
     </div>
   );

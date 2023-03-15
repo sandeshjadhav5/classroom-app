@@ -25,6 +25,7 @@ const Tests = () => {
       <br />
       <br />
       <h2>All Tests</h2>
+
       {isLoading && (
         <div className="loader-gif">
           <br />

@@ -316,3 +316,8 @@ select {
     background-color: azure;
   }
 }
+@media (min-width: 350px) and (max-width: 500px) {
+  .show-hide {
+    margin: -30% 10% 10% 72%;
+  }
+}
