@@ -30,7 +30,7 @@ const Tests = () => {
         <div className="loader-gif">
           <br />
           <br />
-          <img src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" />
+          <img src="https://media.tenor.com/PfFDd3eNE_gAAAAi/loading-load.gif" />
         </div>
       )}
       <div className="main-cards-div">

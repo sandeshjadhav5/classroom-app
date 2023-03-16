@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { useSelector, useDispatch } from "react-redux";
 //import { loginFunction } from "../Redux/AuthReducer/action";
@@ -11,11 +11,21 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
   const isRegistered = useSelector((state) => state.AuthReducer.isRegistered);
-  console.log(isRegistered);
+
+  const isRegisteredLoading = useSelector(
+    (state) => state.AuthReducer.isRegisteredLoading
+  );
+  console.log(
+    "isRegistered",
+    isRegistered,
+    "isRegisteredLoading",
+    isRegisteredLoading
+  );
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -25,7 +35,9 @@ function Register() {
       dispatch(registerFunction(payload));
     }
   };
-
+  if (isRegistered) {
+    navigate("/login");
+  }
   return (
     <div>
       <Navbar />
@@ -67,7 +79,19 @@ function Register() {
           </div>
 
           <div>
-            <input type="submit" className="InputSubmitBtn" />
+            {!isRegisteredLoading && (
+              <input type="submit" className="InputSubmitBtn" />
+            )}
+            {isRegisteredLoading && (
+              <div className="InputSubmitBtnLoading">
+                <div>
+                  <img
+                    src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
+                    alt="loading..."
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </form>
 

@@ -17,6 +17,7 @@ function Login() {
 
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const token = JSON.parse(localStorage.getItem("token")) || "";
+  const isAuthLoading = useSelector((state) => state.AuthReducer.isAuthLoading);
   console.log("token ->", token);
   console.log("isAuth", isAuth);
 
@@ -70,7 +71,19 @@ function Login() {
               {showPassword ? "Hide" : "Show"}
             </p>
             <div>
-              <input type="submit" className="InputSubmitBtn" />
+              {!isAuthLoading && (
+                <input type="submit" className="InputSubmitBtn" />
+              )}
+              {isAuthLoading && (
+                <div className="InputSubmitBtnLoading">
+                  <div>
+                    <img
+                      src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
+                      alt="loading..."
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </form>
           <p>

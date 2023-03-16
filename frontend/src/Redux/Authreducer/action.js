@@ -104,7 +104,7 @@ const registerFunction = (payload) => (dispatch) => {
         x.style.backgroundColor = "green";
         setTimeout(function () {
           x.className = x.className.replace("show", "");
-          dispatch(userLoginSuccess());
+          dispatch(registerSuccess());
         }, 3000);
       } else {
         let x = document.getElementById("snackbar");
@@ -113,7 +113,7 @@ const registerFunction = (payload) => (dispatch) => {
         x.style.backgroundColor = "red";
         setTimeout(function () {
           x.className = x.className.replace("show", "");
-          dispatch(userLoginSuccess());
+          dispatch(registerFailure());
         }, 3000);
       }
     })
@@ -125,7 +125,7 @@ const registerFunction = (payload) => (dispatch) => {
       x.style.backgroundColor = "red";
       setTimeout(function () {
         x.className = x.className.replace("show", "");
-        dispatch(userLoginSuccess());
+        dispatch(registerFailure());
       }, 3000);
     });
 };
