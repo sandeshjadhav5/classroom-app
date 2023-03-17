@@ -1,6 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Navbar from "../Components/Navbar";
+import notes from "../assets/notes.png";
+import "./Tests.css";
 function SingeTest() {
+  const [test, setTest] = useState({});
   var token = JSON.parse(localStorage.getItem("token")) || "";
   console.log("token", token);
   var id = JSON.parse(localStorage.getItem("singleTest"));
@@ -14,13 +18,33 @@ function SingeTest() {
       })
       .then((res) => {
         console.log(res);
+        if (res.data) {
+          setTest(res.data);
+        }
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log("singletest");
   }, []);
-  return <div></div>;
+  return (
+    <div>
+      <Navbar />
+      <br />
+      <br />
+      <br />
+      <div className="test-heading">
+        <div>
+          <div></div>
+          <p>{test.name}</p>
+        </div>
+        <div>
+          <img src={notes} />
+        </div>
+      </div>
+
+      <p>{test.section}</p>
+    </div>
+  );
 }
 
 export default SingeTest;

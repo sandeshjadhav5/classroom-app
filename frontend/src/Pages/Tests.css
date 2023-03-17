@@ -16,6 +16,7 @@ h2 {
 }
 .test-card:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
 }
 .test-card-name {
   font-size: larger;
@@ -56,6 +57,32 @@ h2 {
 .loader-gif img {
   width: 100%;
 }
+
+.test-heading {
+  border: solid red 1px;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin: auto;
+  padding: 1rem;
+  background-image: linear-gradient(to bottom right, #ffafbd, #f1c7ae, #ffc3a0);
+  border-radius: 0.5rem;
+}
+.test-heading div p {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: black;
+  text-transform: uppercase;
+  font-family: "Tilt Warp", cursive;
+  letter-spacing: 0.5rem;
+}
+.test-heading div div {
+  height: 80%;
+}
+.test-heading div img {
+  width: 80%;
+}
+
 /* M  E  D  I  A     Q  U  R  I  E  S */
 
 @media (min-width: 600px) and (max-width: 900px) {
