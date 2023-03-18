@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
@@ -20,6 +20,11 @@ function Register() {
   const isRegisteredLoading = useSelector(
     (state) => state.AuthReducer.isRegisteredLoading
   );
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
+  const token = JSON.parse(localStorage.getItem("token")) || "";
+  const isAuthLoading = useSelector((state) => state.AuthReducer.isAuthLoading);
+  const role = useSelector((state) => state.AuthReducer.role);
+
   console.log(
     "isRegistered",
     isRegistered,
@@ -35,9 +40,22 @@ function Register() {
       dispatch(registerFunction(payload));
     }
   };
-  if (isRegistered) {
-    navigate("/login");
-  }
+
+  useEffect(() => {
+    if (isAuth && token && role == "user") {
+      return navigate("/tests");
+    }
+  }, [isAuth, role, token]);
+  useEffect(() => {
+    if (isAuth && token && role == "admin") {
+      return navigate("/admin");
+    }
+  }, [isAuth, role, token]);
+  useEffect(() => {
+    if (isRegistered) {
+      navigate("/login");
+    }
+  }, [isRegistered]);
   return (
     <div>
       <Navbar />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
@@ -18,15 +18,14 @@ function Login() {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const token = JSON.parse(localStorage.getItem("token")) || "";
   const isAuthLoading = useSelector((state) => state.AuthReducer.isAuthLoading);
-  console.log("token ->", token);
-  console.log("isAuth", isAuth);
+  const role = useSelector((state) => state.AuthReducer.role);
+  console.log("role", role);
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
-    const payload = { email, password };
 
+    const payload = { email, password };
     if (email == "admin@gmail.com" && password == "admin@123") {
       dispatch(adminLogin(payload));
       dispatch(getAllTests());
@@ -36,10 +35,18 @@ function Login() {
       dispatch(loginFunction(payload));
     }
   };
+  console.log(isAuth, token, role);
+  useEffect(() => {
+    if (isAuth && token && role == "user") {
+      return navigate("/tests");
+    }
+  }, [isAuth, role, token]);
+  useEffect(() => {
+    if (isAuth && token && role == "admin") {
+      return navigate("/admin");
+    }
+  }, [isAuth, role, token]);
 
-  if (isAuth && token) {
-    navigate("/tests");
-  }
   return (
     <div>
       <Navbar />

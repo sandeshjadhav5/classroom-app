@@ -43,9 +43,15 @@ function SingeTest() {
     return navigate("/login");
   } else if (loading) {
     return (
-      <div className="single-test-loading">
-        <img src="https://media.tenor.com/6gHLhmwO87sAAAAi/gg.gif" />
-      </div>
+      <>
+        <Navbar />
+        <br />
+        <br />
+        <br />
+        <div className="single-test-loading">
+          <img src="https://media.tenor.com/6gHLhmwO87sAAAAi/gg.gif" />
+        </div>
+      </>
     );
   } else {
     return (
@@ -54,7 +60,6 @@ function SingeTest() {
         <br />
         <br />
         <br />
-
         <div className="test-heading">
           <div>
             <div></div>

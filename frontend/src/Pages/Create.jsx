@@ -4,7 +4,11 @@ import addClass from "../assets/addClass.png";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
-import { addTest } from "../Redux/AppReducer/action";
+import {
+  addTest,
+  addTestLoading,
+  addTestSuccess,
+} from "../Redux/AppReducer/action";
 
 function Create() {
   const navigate = useNavigate();
@@ -14,7 +18,12 @@ function Create() {
   const [room, setRoom] = useState("");
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
-
+  const isAddTestLoading = useSelector(
+    (state) => state.AppReducer.addTestLoading
+  );
+  const isAddTestSuccess = useSelector(
+    (state) => state.AppReducer.addTestSuccess
+  );
   const handleAddTest = (e) => {
     e.preventDefault();
     const payload = {
@@ -83,11 +92,24 @@ function Create() {
               />
             </div>
             <div>
-              <input className="InputSubmitBtn" type="submit" />
+              {!isAddTestLoading && (
+                <input className="InputSubmitBtn" type="submit" />
+              )}
+              {isAddTestLoading && (
+                <div className="InputSubmitBtnLoading">
+                  <div>
+                    <img
+                      src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
+                      alt="loading..."
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </form>
         </div>
       </div>
+      <div id="snackbar"></div>
     </div>
   );
 }

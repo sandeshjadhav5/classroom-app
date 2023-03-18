@@ -76,6 +76,15 @@ const loginFunction = (payload) => (dispatch) => {
         setTimeout(function () {
           x.className = x.className.replace("show", "");
         }, 3000);
+      } else if (res.data == "Wrong Credentials") {
+        dispatch(userLoginFailure());
+        let x = document.getElementById("snackbar");
+        x.innerText = res.data;
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+        }, 3000);
       }
     })
     .catch((err) => {
