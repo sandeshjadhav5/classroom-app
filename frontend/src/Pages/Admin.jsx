@@ -5,14 +5,18 @@ import classSvg from "../assets/classroomPng.png";
 import TestItem from "../Components/TestItem";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
+import { getAllTests } from "../Redux/AppReducer/action";
 function Admin() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const tests = useSelector((state) => state.AppReducer.tests);
   console.log("tests", tests);
   const isLoading = useSelector((state) => state.AppReducer.isLoading);
   const isAdminLogin = useSelector((state) => state.AuthReducer.isAdminLogin);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
-
+  useEffect(() => {
+    dispatch(getAllTests());
+  }, []);
   useEffect(() => {
     if (!isAdminLogin || !isAuth) {
       return navigate("/login");
