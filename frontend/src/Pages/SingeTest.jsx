@@ -3,7 +3,8 @@ import axios from "axios";
 import Navbar from "../Components/Navbar";
 import notes from "../assets/notes.png";
 import "./Tests.css";
-
+import { BsFillPenFill } from "react-icons/bs";
+import { FiEdit } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 function SingeTest() {
@@ -14,6 +15,8 @@ function SingeTest() {
   var token = JSON.parse(localStorage.getItem("token")) || "";
 
   var id = JSON.parse(localStorage.getItem("singleTest"));
+  const role = useSelector((state) => state.AuthReducer.role);
+  console.log("role=>", role);
   const getSingleTest = () => {
     setLoading(true);
     axios
@@ -69,6 +72,11 @@ function SingeTest() {
             <img src={notes} />
           </div>
         </div>
+        {role == "admin" && (
+          <div className="editTest">
+            <FiEdit />
+          </div>
+        )}
         <br />
         <br />
         {loading && <h1>Loading...</h1>}

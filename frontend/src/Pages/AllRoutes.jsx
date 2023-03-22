@@ -7,6 +7,7 @@ import Admin from "./Admin";
 import Create from "./Create";
 import Tests from "./Tests";
 import SingeTest from "./SingeTest";
+import EditTest from "./EditTest";
 
 function AllRoutes() {
   return (
@@ -19,6 +20,7 @@ function AllRoutes() {
         <Route path="/create" element={<Create />} />
         <Route path="/tests" element={<Tests />} />
         <Route path="tests/:id" element={<SingeTest />} />
+        <Route path="/tests/:id/edit" element={<EditTest />} />
       </Routes>
     </div>
   );

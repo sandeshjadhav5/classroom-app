@@ -5,8 +5,12 @@ import { getAllTests } from "../Redux/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import TestItem from "../Components/TestItem";
 import Navbar from "../Components/Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Tests = () => {
   const navigate = useNavigate();
+  const notify = () => toast("Wow so easy !");
   const tests = useSelector((state) => state.AppReducer.tests);
   const dispatch = useDispatch();
   console.log("tests", tests);
@@ -15,6 +19,7 @@ const Tests = () => {
   useEffect(() => {
     dispatch(getAllTests());
   }, []);
+
   if (!isAuth) {
     return navigate("/login");
   }
@@ -25,7 +30,6 @@ const Tests = () => {
       <br />
       <br />
       <h2>All Tests</h2>
-
       {isLoading && (
         <div className="loader-gif">
           <br />
@@ -36,6 +40,7 @@ const Tests = () => {
       <div className="main-cards-div">
         {!isLoading && tests && tests.map((el) => <TestItem {...el} />)}
       </div>
+      <ToastContainer />;
     </div>
   );
 };

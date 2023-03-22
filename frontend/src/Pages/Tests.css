@@ -1,9 +1,10 @@
 .main-cards-div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   width: 95%;
   margin: auto;
+  padding: 1rem;
 }
 h2 {
   text-align: center;
@@ -96,8 +97,40 @@ h2 {
   width: 100%;
 }
 
-/* M  E  D  I  A     Q  U  R  I  E  S */
+.editTest {
+  position: relative;
+  margin: -4% 12% 0 82%;
+  font-size: xx-large;
+  background-color: #ccc;
+  border: solid #bbb8b8 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 100%;
+}
+.editTest:hover {
+  background-color: rgb(133, 211, 133);
+  color: white;
+  border: solid rgb(92, 192, 92) 0.5rem;
+}
+.editTest:hover::after {
+  content: "Add Note";
+  position: absolute;
+  font-size: small;
+  top: 100%;
+  color: black;
+  left: 0;
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+/* M  E  D  I  A     Q  U  R  I  E  S */
+@media (min-width: 900px) and (max-width: 1150px) {
+  .editTest {
+    margin: -4% 13% 0 79%;
+  }
+}
 @media (min-width: 600px) and (max-width: 900px) {
   .main-cards-div {
     grid-template-columns: repeat(2, 1fr);
@@ -115,6 +148,9 @@ h2 {
   }
   .test-heading div img {
     width: 80%;
+  }
+  .editTest {
+    margin: -6% 12% 0 80%;
   }
 }
 
@@ -140,5 +176,20 @@ h2 {
   }
   .test-heading div img {
     width: 80%;
+  }
+  .editTest {
+    margin: -6% 11% 0 79%;
+  }
+}
+@media (min-width: 300px) and (max-width: 480px) {
+  .editTest {
+    margin: -6% 12% 0 78%;
+    font-size: x-large;
+    background-color: #ccc;
+
+    border: solid #bbb8b8 0.2rem;
+    text-align: center;
+    padding: 0.3rem;
+    border-radius: 100%;
   }
 }

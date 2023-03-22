@@ -6,6 +6,7 @@ import TestItem from "../Components/TestItem";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
 import { getAllTests } from "../Redux/AppReducer/action";
+import TestItemAdmin from "../Components/TestItemAdmin";
 function Admin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ function Admin() {
         </div>
       )}
       <div className="main-cards-div">
-        {!isLoading && tests && tests.map((el) => <TestItem {...el} />)}
+        {!isLoading && tests && tests.map((el) => <TestItemAdmin {...el} />)}
       </div>
     </div>
   );
