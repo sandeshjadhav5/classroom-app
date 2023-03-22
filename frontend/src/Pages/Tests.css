@@ -111,6 +111,9 @@ h2 {
   background-color: rgb(133, 211, 133);
   color: white;
   border: solid rgb(92, 192, 92) 0.5rem;
+  border-inline-end-color: rgb(41, 148, 41);
+  border-inline-start-color: rgb(19, 102, 19);
+  cursor: pointer;
 }
 .editTest:hover::after {
   content: "Add Note";

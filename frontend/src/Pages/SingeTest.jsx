@@ -37,6 +37,9 @@ function SingeTest() {
         setLoading(false);
       });
   };
+  const handleNavigate = () => {
+    navigate(`/tests/${id}/edit`);
+  };
 
   useEffect(() => {
     getSingleTest();
@@ -73,7 +76,7 @@ function SingeTest() {
           </div>
         </div>
         {role == "admin" && (
-          <div className="editTest">
+          <div className="editTest" onClick={handleNavigate}>
             <FiEdit />
           </div>
         )}

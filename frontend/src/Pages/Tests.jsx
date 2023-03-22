@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Tests = () => {
   const navigate = useNavigate();
-  const notify = () => toast("Wow so easy !");
+
   const tests = useSelector((state) => state.AppReducer.tests);
   const dispatch = useDispatch();
   console.log("tests", tests);

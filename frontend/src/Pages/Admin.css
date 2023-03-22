@@ -74,7 +74,8 @@ h1 {
   font-weight: 600;
 }
 .create-form input,
-select {
+select,
+textarea {
   height: 2rem;
   width: 100%;
   margin-bottom: 1rem;
