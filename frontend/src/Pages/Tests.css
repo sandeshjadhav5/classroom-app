@@ -97,6 +97,27 @@ h2 {
   width: 100%;
 }
 
+.single-test-notes {
+  width: 70%;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: solid 1px #ccc;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+.single-test-notes div {
+  border: solid 1px #ccc;
+}
+.single-test-notes div p {
+  font-weight: bold;
+  padding: 1rem;
+}
+.single-test-notes div img {
+  width: 100%;
+}
+
 .editTest {
   position: relative;
   margin: -4% 12% 0 82%;

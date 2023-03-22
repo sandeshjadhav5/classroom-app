@@ -91,6 +91,19 @@ function SingeTest() {
         <div className="single-test-body">
           <p>{test.section}</p>
         </div>
+        <br />
+        {test.notes && (
+          <div className="single-test-notes">
+            <h2>Notes</h2>
+            {test.notes.map((el) => (
+              <div>
+                <p>{el.title}</p>
+                <img src={el.image} />
+                <p>{el.details}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

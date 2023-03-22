@@ -71,6 +71,7 @@ const addTest = (data) => (dispatch) => {
       }, 3000);
     })
     .catch((err) => {
+      addTestFailure();
       console.log(err);
     });
 };
@@ -83,11 +84,15 @@ const editNote = (data) => (dispatch) => {
   console.log("token,id is ->", token, id);
 
   return axios
-    .post(`https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/edit`, data, {
-      headers: {
-        Authorization: token,
-      },
-    })
+    .patch(
+      `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
+      data,
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
     .then((res) => {
       console.log(res.data);
       let x = document.getElementById("snackbar");
@@ -101,15 +106,18 @@ const editNote = (data) => (dispatch) => {
     })
     .catch((err) => {
       console.log(err);
+      dispatch(editNoteFailure());
     });
 };
 export {
   getTests,
   addTestSuccess,
+  addTestFailure,
   getAllTests,
   addTest,
   addTestLoading,
   editNoteReq,
   editNoteSuccess,
   editNote,
+  editNoteFailure,
 };

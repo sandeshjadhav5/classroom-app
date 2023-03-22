@@ -5,8 +5,10 @@ const initialState = {
   isLoading: false,
   addTestLoading: false,
   addTestSuccess: false,
+  addTestFailure: false,
   editNoteLoading: false,
   editNoteSuccess: false,
+  editNoteFailure: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,10 +22,24 @@ const reducer = (state = initialState, action) => {
       return { ...state, addTestLoading: true };
     case types.ADD_TEST_SUCCESS:
       return { ...state, addTestLoading: false, addTestSuccess: true };
+    case types.ADD_TEST_FAILURE:
+      return {
+        ...state,
+        addTestFailure: true,
+        addTestLoading: false,
+        addTestSuccess: false,
+      };
     case types.EDIT_NOTE_REQ:
       return { ...state, editNoteLoading: true };
     case types.EDIT_NOTE_SUCCESS:
       return { ...state, editNoteSuccess: true, editNoteLoading: false };
+    case types.EDIT_NOTE_FAILURE:
+      return {
+        ...state,
+        editNoteLoading: false,
+        editNoteFailure: true,
+        editNoteSuccess: false,
+      };
     default:
       return state;
   }
