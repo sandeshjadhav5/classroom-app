@@ -15,6 +15,22 @@ const getTestsLoading = () => {
 const addTestSuccess = () => {
   return { type: types.ADD_TEST_SUCCESS };
 };
+
+const addTestFailure = () => {
+  return { type: types.ADD_TEST_FAILURE };
+};
+const editNoteReq = () => {
+  return { type: types.EDIT_NOTE_REQ };
+};
+
+const editNoteSuccess = () => {
+  return { type: types.EDIT_NOTE_SUCCESS };
+};
+
+const editNoteFailure = () => {
+  return { type: types.EDIT_NOTE_FAILURE };
+};
+
 const getAllTests = (payload) => (dispatch) => {
   dispatch(getTestsLoading());
   var token = JSON.parse(localStorage.getItem("token")) || "";
@@ -58,4 +74,42 @@ const addTest = (data) => (dispatch) => {
       console.log(err);
     });
 };
-export { getTests, addTestSuccess, getAllTests, addTest, addTestLoading };
+
+const editNote = (data) => (dispatch) => {
+  dispatch(editNoteReq());
+  var token = JSON.parse(localStorage.getItem("token")) || "";
+
+  var id = JSON.parse(localStorage.getItem("singleTest"));
+  console.log("token,id is ->", token, id);
+
+  return axios
+    .post(`https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/edit`, data, {
+      headers: {
+        Authorization: token,
+      },
+    })
+    .then((res) => {
+      console.log(res.data);
+      let x = document.getElementById("snackbar");
+      x.className = "show";
+      x.innerText = res.data.msg;
+      x.style.backgroundColor = "green";
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+        dispatch(editNoteSuccess());
+      }, 3000);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+export {
+  getTests,
+  addTestSuccess,
+  getAllTests,
+  addTest,
+  addTestLoading,
+  editNoteReq,
+  editNoteSuccess,
+  editNote,
+};

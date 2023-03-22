@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Admin.css";
 import editClass from "../assets/editNote.png";
+import { editNote } from "../Redux/AppReducer/action";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -18,13 +19,13 @@ function EditTest() {
 
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
-  const isAddTestLoading = useSelector(
-    (state) => state.AppReducer.addTestLoading
+  const iseEditNoteLoading = useSelector(
+    (state) => state.AppReducer.editNoteLoading
   );
-  const isAddTestSuccess = useSelector(
-    (state) => state.AppReducer.addTestSuccess
+  const isEditNoteSuccess = useSelector(
+    (state) => state.AppReducer.editNoteSuccess
   );
-  const handleAddTest = (e) => {
+  const handleAddNote = (e) => {
     e.preventDefault();
     const payload = {
       title,
@@ -33,7 +34,7 @@ function EditTest() {
     };
     console.log(payload);
     if (payload) {
-      dispatch(addTest(payload));
+      dispatch(editNote(payload));
     }
   };
 
@@ -49,8 +50,11 @@ function EditTest() {
         <h1 className="editNote">Add Note </h1>
       </div>
       <div className="edit-class-grid">
+        <div>
+          <img src={editClass} />
+        </div>
         <div className="edit-form">
-          <form onSubmit={handleAddTest}>
+          <form onSubmit={handleAddNote}>
             <div>
               <span>Note Title</span>
               <input
@@ -81,10 +85,10 @@ function EditTest() {
             </div>
 
             <div>
-              {!isAddTestLoading && (
+              {!iseEditNoteLoading && (
                 <input className="InputSubmitBtn" type="submit" />
               )}
-              {isAddTestLoading && (
+              {iseEditNoteLoading && (
                 <div className="InputSubmitBtnLoading">
                   <div>
                     <img
@@ -96,9 +100,6 @@ function EditTest() {
               )}
             </div>
           </form>
-        </div>
-        <div>
-          <img src={editClass} />
         </div>
       </div>
       <div id="snackbar"></div>

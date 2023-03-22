@@ -2,3 +2,7 @@ export const GET_TESTS = "GET_TESTS";
 export const GET_TESTS_LOADING = "GET_TESTS_LOADING";
 export const ADD_TEST_REQ = "ADD_TEST_REQ";
 export const ADD_TEST_SUCCESS = "ADD_TEST_SUCCESS";
+export const ADD_TEST_FAILURE = "ADD_TEST_FAILURE";
+export const EDIT_NOTE_REQ = "EDIT_NOTE_REQ";
+export const EDIT_NOTE_SUCCESS = "EDIT_NOTE_SUCCESS";
+export const EDIT_NOTE_FAILURE = "EDIT_NOTE_FAILURE";

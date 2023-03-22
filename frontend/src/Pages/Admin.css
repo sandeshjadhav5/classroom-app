@@ -94,7 +94,6 @@ select {
 }
 .edit-form {
   margin: auto;
-
   padding: 2rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -112,6 +111,8 @@ select {
 }
 
 .add-class-grid {
+  margin: auto;
+  margin-top: 1rem;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -123,7 +124,7 @@ select {
 }
 
 .edit-class-grid img {
-  width: 90%;
+  width: 100%;
 }
 .add-class-grid img {
   width: 100%;
@@ -141,6 +142,11 @@ select {
     gap: 3rem;
     grid-template-columns: repeat(1, 1fr);
   }
+  .edit-class-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
@@ -152,6 +158,11 @@ select {
     width: 65%;
   }
   .add-class-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .edit-class-grid {
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(1, 1fr);

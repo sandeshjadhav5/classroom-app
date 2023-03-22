@@ -3,6 +3,7 @@ import "./Admin.css";
 import addClass from "../assets/addClass.png";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
+
 import { useNavigate } from "react-router-dom";
 import {
   addTest,
@@ -47,7 +48,7 @@ function Create() {
       <Navbar />
       <br />
       <div>
-        <h1>Create Testroom</h1>
+        <h1 className="editNote">Create Testroom</h1>
       </div>
       <div className="add-class-grid">
         <div>
