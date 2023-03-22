@@ -106,6 +106,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 .single-test-notes div {
   border: solid 1px #ccc;
