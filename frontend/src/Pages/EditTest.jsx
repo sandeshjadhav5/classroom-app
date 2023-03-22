@@ -46,10 +46,10 @@ function EditTest() {
       <Navbar />
       <br />
       <div>
-        <h1>Create Testroom</h1>
+        <h1 className="editNote">Add Note </h1>
       </div>
-      <div className="add-class-grid">
-        <div className="create-form">
+      <div className="edit-class-grid">
+        <div className="edit-form">
           <form onSubmit={handleAddTest}>
             <div>
               <span>Note Title</span>

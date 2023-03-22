@@ -1,3 +1,14 @@
+.editNote {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: black;
+  text-transform: uppercase;
+  font-family: "Tilt Warp", cursive;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: green;
+}
 .classSvg {
   width: 30%;
   margin: auto;
@@ -45,12 +56,6 @@
   transition: 0.4s;
 }
 
-h1 {
-  text-align: center;
-  color: green;
-  font-size: 2rem;
-  margin: 2rem;
-}
 .create-form {
   width: 50%;
   margin: auto;
@@ -74,22 +79,52 @@ h1 {
   font-weight: 600;
 }
 .create-form input,
-select,
-textarea {
+select {
   height: 2rem;
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
+}
+.edit-form input,
+select {
+  height: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.edit-form {
+  margin: auto;
+
+  padding: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 0.5rem;
+  background-color: bisque;
+}
+.edit-form form div span {
+  font-weight: 500;
+}
+.edit-form form div textarea {
+  width: 100%;
 }
 .create-form span {
   font-weight: 500;
 }
 
 .add-class-grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.edit-class-grid {
+  margin-top: -5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+.edit-class-grid img {
+  width: 90%;
+}
 .add-class-grid img {
   width: 100%;
 }
