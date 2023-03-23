@@ -19,7 +19,6 @@ function Login() {
   const token = JSON.parse(localStorage.getItem("token")) || "";
   const isAuthLoading = useSelector((state) => state.AuthReducer.isAuthLoading);
   const role = useSelector((state) => state.AuthReducer.role);
-  console.log("role", role);
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -35,7 +34,6 @@ function Login() {
       dispatch(loginFunction(payload));
     }
   };
-  console.log(isAuth, token, role);
   useEffect(() => {
     if (isAuth && token && role == "user") {
       return navigate("/tests");

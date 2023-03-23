@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Admin.css";
 import addClass from "../assets/addClass.png";
 import { useSelector, useDispatch } from "react-redux";
@@ -37,10 +37,11 @@ function Create() {
       dispatch(addTest(payload));
     }
   };
-
-  if (!isAuth) {
-    return navigate("/login");
-  }
+  useEffect(() => {
+    if (!isAuth) {
+      return navigate("/login");
+    }
+  }, []);
 
   return (
     <div>

@@ -18,10 +18,12 @@ const Tests = () => {
   useEffect(() => {
     dispatch(getAllTests());
   }, []);
+  useEffect(() => {
+    if (!isAuth) {
+      return navigate("/login");
+    }
+  }, []);
 
-  if (!isAuth) {
-    return navigate("/login");
-  }
   return (
     <div>
       <Navbar />
