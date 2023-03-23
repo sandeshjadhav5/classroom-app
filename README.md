@@ -37,7 +37,7 @@ This a a webapp created for my Client, where students can join class and study o
 
 User Side - https://you-can-test-classroom-app.netlify.app/
 
-Server - https://odd-tan-mackerel-wig.cyclic.app/tests
+Server - https://odd-tan-mackerel-wig.cyclic.app
 
 ## To Run Locally
 
