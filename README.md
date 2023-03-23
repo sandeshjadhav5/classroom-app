@@ -1,7 +1,7 @@
 
 <div style="display:flex"><h1 align="center">Classroom App</h1></div>
 
-This a a webapp created for my Client, where students can join class and study online ,View contents inside class . Teachers can create New Classes,Update and Delete new notes inside this classes.This is Clone of Google Classroom Website.
+This is a webapp created for Client, where students can join class and study online ,View contents inside class . Teachers can create New Classes,Update and Delete new notes inside this classes.This is Clone of Google Classroom Website.
 
 ## Tech Stack
 
