@@ -52,7 +52,7 @@ const getAllTests = (payload) => (dispatch) => {
 const addTest = (data) => (dispatch) => {
   dispatch(addTestLoading());
   var token = JSON.parse(localStorage.getItem("token")) || "";
-  console.log("token is ->", token);
+
   return axios
     .post(`https://odd-tan-mackerel-wig.cyclic.app/tests/create`, data, {
       headers: {
@@ -81,7 +81,6 @@ const editNote = (data) => (dispatch) => {
   var token = JSON.parse(localStorage.getItem("token")) || "";
 
   var id = JSON.parse(localStorage.getItem("singleTest"));
-  console.log("token,id is ->", token, id);
 
   return axios
     .patch(

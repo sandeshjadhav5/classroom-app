@@ -33,7 +33,6 @@ function Create() {
       subject,
       room,
     };
-    console.log(payload);
     if (payload) {
       dispatch(addTest(payload));
     }

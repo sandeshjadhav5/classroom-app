@@ -32,7 +32,6 @@ function EditTest() {
       image,
       details,
     };
-    console.log(payload);
     if (payload) {
       dispatch(editNote(payload));
     }

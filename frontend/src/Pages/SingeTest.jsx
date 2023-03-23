@@ -16,7 +16,6 @@ function SingeTest() {
 
   var id = JSON.parse(localStorage.getItem("singleTest"));
   const role = useSelector((state) => state.AuthReducer.role);
-  console.log("role=>", role);
   const getSingleTest = () => {
     setLoading(true);
     axios
@@ -26,14 +25,12 @@ function SingeTest() {
         },
       })
       .then((res) => {
-        console.log(res);
         setLoading(false);
         if (res.data) {
           setTest(res.data);
         }
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
   };

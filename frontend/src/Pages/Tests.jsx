@@ -13,7 +13,6 @@ const Tests = () => {
 
   const tests = useSelector((state) => state.AppReducer.tests);
   const dispatch = useDispatch();
-  console.log("tests", tests);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const isLoading = useSelector((state) => state.AppReducer.isLoading);
   useEffect(() => {

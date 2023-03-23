@@ -25,12 +25,6 @@ function Register() {
   const isAuthLoading = useSelector((state) => state.AuthReducer.isAuthLoading);
   const role = useSelector((state) => state.AuthReducer.role);
 
-  console.log(
-    "isRegistered",
-    isRegistered,
-    "isRegisteredLoading",
-    isRegisteredLoading
-  );
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
