@@ -10,10 +10,11 @@ import { Link, useNavigate } from "react-router-dom";
 function SingeTest() {
   const [test, setTest] = useState({});
   const [loading, setLoading] = useState(false);
+  const [notes, setNotes] = useState([]);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const navigate = useNavigate();
   var token = JSON.parse(localStorage.getItem("token")) || "";
-
+  console.log("notes", notes);
   var id = JSON.parse(localStorage.getItem("singleTest"));
   const role = useSelector((state) => state.AuthReducer.role);
   const getSingleTest = () => {
@@ -28,6 +29,7 @@ function SingeTest() {
         setLoading(false);
         if (res.data) {
           setTest(res.data);
+          setNotes(res.data.notes);
         }
       })
       .catch((err) => {
@@ -89,16 +91,18 @@ function SingeTest() {
           <p>{test.section}</p>
         </div>
         <br />
-        {test.notes && (
+        {notes && (
           <div className="single-test-notes">
-            <h2>Notes</h2>
-            {test.notes.map((el) => (
-              <div>
-                <p>{el.title}</p>
-                <img src={el.image} />
-                <p>{el.details}</p>
-              </div>
-            ))}
+            {notes.length > 0 && <h2>Notes</h2>}
+            {notes.length == 0 && <h2>No Notes Available</h2>}
+            {notes &&
+              notes.map((el) => (
+                <div>
+                  <p>{el.title}</p>
+                  <img src={el.image} />
+                  <p>{el.details}</p>
+                </div>
+              ))}
           </div>
         )}
       </div>
