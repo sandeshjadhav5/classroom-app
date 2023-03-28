@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import loginAnimation from "../assets/loginAnimated.gif";
+import registerGif from "../assets/registerAnimated.gif";
 import { useSelector, useDispatch } from "react-redux";
 //import { loginFunction } from "../Redux/AuthReducer/action";
 import { registerFunction } from "../Redux/AuthReducer/action";
@@ -60,7 +60,7 @@ function Register() {
       <h1 className="loginHeading">Register</h1>
       <div className="login-register">
         <div className="animationLogin">
-          <img src={loginAnimation} />
+          <img src={registerGif} />
         </div>
         <div className="formDiv">
           <form onSubmit={handleSubmit}>
