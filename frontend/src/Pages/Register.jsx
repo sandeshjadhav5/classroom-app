@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import loginAnimation from "../assets/loginAnimated.gif";
 import { useSelector, useDispatch } from "react-redux";
 //import { loginFunction } from "../Redux/AuthReducer/action";
 import { registerFunction } from "../Redux/AuthReducer/action";
@@ -51,65 +52,70 @@ function Register() {
     }
   }, [isRegistered]);
   return (
-    <div>
+    <div className="registerPageMain">
       <Navbar />
       <br />
       <br />
       <br />
       <h1 className="loginHeading">Register</h1>
-      <div className="formDiv">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <span>Name</span>
-            <input
-              placeholder="Enter your Name"
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <span>Email</span>
-            <input
-              placeholder="email id"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              type="email"
-            />
-          </div>
-          <div>
-            <span>Password</span>
-            <input
-              className="password-input"
-              type={showPassword ? "text" : "password"}
-              placeholder="password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <p onClick={toggleShowPassword} className="show-hide">
-              {showPassword ? "Hide" : "Show"}
-            </p>
-          </div>
+      <div className="login-register">
+        <div className="animationLogin">
+          <img src={loginAnimation} />
+        </div>
+        <div className="formDiv">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <span>Name</span>
+              <input
+                placeholder="Enter your Name"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <span>Email</span>
+              <input
+                placeholder="email id"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+              />
+            </div>
+            <div>
+              <span>Password</span>
+              <input
+                className="password-input"
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <p onClick={toggleShowPassword} className="show-hide">
+                {showPassword ? "Hide" : "Show"}
+              </p>
+            </div>
 
-          <div>
-            {!isRegisteredLoading && (
-              <input type="submit" className="InputSubmitBtn" />
-            )}
-            {isRegisteredLoading && (
-              <div className="InputSubmitBtnLoading">
-                <div>
-                  <img
-                    src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
-                    alt="loading..."
-                  />
+            <div>
+              {!isRegisteredLoading && (
+                <input type="submit" className="InputSubmitBtn" />
+              )}
+              {isRegisteredLoading && (
+                <div className="InputSubmitBtnLoading">
+                  <div>
+                    <img
+                      src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
+                      alt="loading..."
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        </form>
+              )}
+            </div>
+          </form>
 
-        <p>
-          Already Have a Account ? <Link to="/login">Login</Link>
-        </p>
+          <p>
+            Already Have a Account ? <Link to="/login">Login</Link>
+          </p>
+        </div>
       </div>
       <div id="snackbar"></div>
     </div>

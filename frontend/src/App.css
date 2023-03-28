@@ -146,6 +146,10 @@ li {
   background-color: #e2f0f9;
   height: 100vh;
 }
+.registerPageMain {
+  background-color: #d9e5ec;
+  height: 100vh;
+}
 .login-register {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -206,6 +210,13 @@ select {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  font-size: 1rem;
+}
+.registerPageMain .login-register .formDiv input,
+select {
+  font-size: 1rem;
+}
+.registerPageMain .login-register .formDiv span {
   font-size: 1rem;
 }
 .formDiv span {
