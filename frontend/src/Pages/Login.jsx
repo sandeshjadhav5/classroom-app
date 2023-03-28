@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import loginAnimation from "../assets/loginAnimated.gif";
 import { useSelector, useDispatch } from "react-redux";
 import { adminLogin, loginFunction } from "../Redux/AuthReducer/action";
 import { getAllTests, getTests } from "../Redux/AppReducer/action";
@@ -46,13 +47,17 @@ function Login() {
   }, [isAuth, role, token]);
 
   return (
-    <div>
+    <div className="loginPageMain">
       <Navbar />
       <br />
       <br />
       <br />
+      <h1 className="loginHeading">Login</h1>
+
       <div className="login-register">
-        <h1 className="loginHeading">Login</h1>
+        <div className="animationLogin">
+          <img src={loginAnimation} />
+        </div>
         <div className="formDiv">
           <form onSubmit={handleSubmit}>
             <div>

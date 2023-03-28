@@ -30,7 +30,7 @@ function Navbar() {
       <header>
         <nav className="navbar">
           <p className="nav-branding">
-            <Link to="/">You Can Test !</Link>
+            <Link to="/">Classroom App</Link>
           </p>
 
           <ul className="nav-menu">

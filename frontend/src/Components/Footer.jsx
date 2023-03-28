@@ -78,7 +78,9 @@ function Footer() {
         <hr />
       </div>
       <div className="youCanTest">
-        <h2>You Can Test</h2>
+        <h3>
+          Developed by <h2>Sandesh Jadhav</h2>
+        </h3>
       </div>
     </div>
   );

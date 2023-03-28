@@ -48,7 +48,9 @@ function Admin() {
         </div>
       )}
       <div className="main-cards-div">
-        {!isLoading && tests && tests.map((el) => <TestItemAdmin {...el} />)}
+        {!isLoading &&
+          tests &&
+          tests.map((el) => <TestItemAdmin {...el} key={el._id} />)}
       </div>
     </div>
   );

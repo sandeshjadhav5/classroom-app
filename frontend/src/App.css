@@ -1,5 +1,11 @@
 .main-home-div {
-  background-image: linear-gradient(to bottom right, #2a85a2, #a9dbe6, #348faa);
+  background-image: linear-gradient(
+    to bottom right,
+    #a9dbe6,
+    #a9dbe6,
+    #348faa,
+    #a9dbe6
+  );
 }
 .logoImg {
   margin: auto;
@@ -136,14 +142,33 @@ li {
 }
 
 /* LOGIN FORM CSS */
-.formDiv {
-  width: 22%;
+.loginPageMain {
+  background-color: #2b2a2a;
+  height: 100vh;
+}
+.login-register {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 70%;
   margin: auto;
-  padding: 2rem;
+  background-color: #414040;
+  border-radius: 1rem;
+}
+.login-register .formDiv p a {
+  color: white;
+}
+.login-register .formDiv {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 3rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 0.5rem;
-  background-color: azure;
+  color: white;
+  border-top-left-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  background-color: #181717;
 }
 .InputSubmitBtn {
   margin-top: 1rem;
@@ -177,14 +202,24 @@ li {
 }
 .formDiv input,
 select {
-  height: 2rem;
+  height: 3rem;
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  font-size: 1rem;
+}
+.formDiv span {
+  font-size: 1.5rem;
 }
 .loginHeading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Tilt Warp", cursive;
+  letter-spacing: 0.5rem;
   text-align: center;
   margin: 1rem;
+  color: rgb(103, 135, 202);
 }
 .formDiv span {
   font-weight: 500;
@@ -192,6 +227,7 @@ select {
 .show-hide {
   margin: -18% 10% 10% 80%;
   font-weight: 600;
+  color: black;
   font-size: small;
   cursor: pointer;
 }
@@ -287,6 +323,12 @@ select {
     color: #7b7f83;
     font-weight: 500;
   }
+  .login-register {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 70%;
+    margin: auto;
+  }
   .formDiv {
     width: 40%;
     margin: auto;
@@ -323,6 +365,16 @@ select {
     color: #7b7f83;
     font-weight: 400;
   }
+  .loginPageMain {
+    background-color: #294c6e;
+    height: 100vh;
+  }
+  .login-register {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+    margin: auto;
+  }
   .formDiv {
     width: 50%;
     margin: auto;
@@ -336,5 +388,11 @@ select {
 @media (min-width: 350px) and (max-width: 500px) {
   .show-hide {
     margin: -30% 10% 10% 72%;
+  }
+  .login-register {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+    margin: auto;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Admin.css";
 import editClass from "../assets/editNote.png";
 import { editNote } from "../Redux/AppReducer/action";
@@ -37,9 +37,11 @@ function EditTest() {
     }
   };
 
-  if (!isAuth) {
-    return navigate("/login");
-  }
+  useEffect(() => {
+    if (!isAuth) {
+      return navigate("/login");
+    }
+  }, []);
 
   return (
     <div>

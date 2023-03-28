@@ -1,7 +1,6 @@
 .editNote {
   font-size: 2.5rem;
   font-weight: 900;
-  color: black;
   text-transform: uppercase;
   font-family: "Tilt Warp", cursive;
   letter-spacing: 0.5rem;
@@ -118,7 +117,7 @@ select {
   grid-template-columns: repeat(2, 1fr);
 }
 .edit-class-grid {
-  margin-top: -5rem;
+  margin-top: -4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -129,6 +128,30 @@ select {
 .add-class-grid img {
   width: 100%;
 }
+
+/* .deleteBtn {
+  border: solid red 1px;
+  position: sticky;
+  margin: auto;
+  width: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+} */
+.deleteBtn {
+  position: sticky;
+  color: rgb(201, 39, 39);
+  font-size: 2rem;
+  margin-left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.deleteBtn :hover {
+  color: red;
+  cursor: pointer;
+}
+
 @media (min-width: 600px) and (max-width: 900px) {
   .classSvg {
     width: 50%;
@@ -142,9 +165,11 @@ select {
     gap: 3rem;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .edit-class-grid {
+    margin-top: 0rem;
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -163,8 +188,9 @@ select {
     grid-template-columns: repeat(1, 1fr);
   }
   .edit-class-grid {
+    margin-top: 0rem;
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
     grid-template-columns: repeat(1, 1fr);
   }
 }
