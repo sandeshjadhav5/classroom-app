@@ -25,12 +25,12 @@ const Tests = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mainDivTest">
       <Navbar />
       <br />
       <br />
       <br />
-      <h2>All Tests</h2>
+      <h2>All Classes</h2>
       {isLoading && (
         <div className="loader-gif">
           <br />

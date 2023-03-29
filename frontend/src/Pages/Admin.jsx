@@ -23,7 +23,7 @@ function Admin() {
     }
   }, []);
   return (
-    <div>
+    <div className="mainDivTest">
       <Navbar />
       <br />
       <br />

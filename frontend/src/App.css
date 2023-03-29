@@ -1,11 +1,5 @@
 .main-home-div {
-  background-image: linear-gradient(
-    to bottom right,
-    #a9dbe6,
-    #a9dbe6,
-    #348faa,
-    #a9dbe6
-  );
+  background-image: linear-gradient(to bottom right, #dbdfe0, #fdfbfb, #dbdfe0);
 }
 .logoImg {
   margin: auto;
@@ -410,6 +404,9 @@ select {
 @media (max-width: 500px) {
   .show-hide {
     margin: -20% 15% 10% 80%;
+  }
+  .homePageCards {
+    grid-template-columns: repeat(1, 1fr);
   }
   .login-register {
     display: grid;
