@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Admin.css";
-import addClass from "../assets/addClass.png";
+import addClass from "../assets/addClass.gif";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../Components/Navbar";
 
@@ -44,14 +44,14 @@ function Create() {
   }, []);
 
   return (
-    <div>
+    <div className="createTestPageMain">
       <Navbar />
       <br />
       <div>
         <h1 className="editNote">Create Testroom</h1>
       </div>
       <div className="add-class-grid">
-        <div>
+        <div className="createClassImgDiv">
           <img src={addClass} />
         </div>
         <div className="create-form">
