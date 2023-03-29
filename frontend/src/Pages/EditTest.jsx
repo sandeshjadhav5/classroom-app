@@ -44,14 +44,14 @@ function EditTest() {
   }, []);
 
   return (
-    <div>
+    <div className="editTestMainDiv">
       <Navbar />
       <br />
       <div>
         <h1 className="editNote">Add Note </h1>
       </div>
       <div className="edit-class-grid">
-        <div>
+        <div className="visibleImg">
           <img src={editClass} />
         </div>
         <div className="edit-form">
@@ -101,6 +101,9 @@ function EditTest() {
               )}
             </div>
           </form>
+        </div>
+        <div className="hiddenImg">
+          <img src={editClass} />
         </div>
       </div>
       <div id="snackbar"></div>

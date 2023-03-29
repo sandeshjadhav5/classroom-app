@@ -48,7 +48,7 @@ function Create() {
       <Navbar />
       <br />
       <div>
-        <h1 className="editNote">Create Testroom</h1>
+        <h1 className="editNote">Create Classrrom</h1>
       </div>
       <div className="add-class-grid">
         <div className="createClassImgDiv">

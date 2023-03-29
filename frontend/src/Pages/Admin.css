@@ -2,6 +2,10 @@
   background-image: linear-gradient(to bottom right, #fdfbfb, #ebedee, #fad0c4);
   height: 100vh;
 }
+.editTestMainDiv {
+  background-image: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  height: 120vh;
+}
 .editNote {
   font-size: 2.5rem;
   font-weight: 900;
@@ -88,7 +92,7 @@ select {
 }
 .edit-form input,
 select {
-  height: 2rem;
+  height: 3rem;
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -96,13 +100,10 @@ select {
 .edit-form {
   margin: auto;
   padding: 2rem;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 0.5rem;
-  background-color: bisque;
 }
 .edit-form form div span {
-  font-weight: 500;
+  font-weight: 600;
 }
 .edit-form form div textarea {
   width: 100%;
@@ -115,22 +116,24 @@ select {
   margin: auto;
   width: 80%;
   display: grid;
-
   background-color: white;
   margin-top: 1rem;
   grid-template-columns: repeat(2, 1fr);
 }
 .edit-class-grid {
-  margin-top: -4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-top: -3rem;
 }
 .createClassImgDiv {
   width: 100%;
   margin: auto;
 }
-.edit-class-grid img {
+.edit-class-grid .visibleImg img {
   width: 100%;
+}
+.hiddenImg {
+  display: none;
 }
 .add-class-grid img {
   width: 80%;
@@ -157,6 +160,9 @@ select {
     width: 50%;
     margin: auto;
   }
+  .edit-form {
+    width: 60%;
+  }
   .create-form {
     width: 70%;
   }
@@ -167,10 +173,18 @@ select {
   }
 
   .edit-class-grid {
-    margin-top: 0rem;
     display: grid;
-    gap: 1rem;
+    margin-top: 1rem;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .edit-class-grid .visibleImg img {
+    display: none;
+  }
+  .edit-class-grid .hiddenImg {
+    display: block;
+  }
+  .edit-class-grid .hiddenImg img {
+    width: 100%;
   }
   .createClassImgDiv img {
     width: 60%;
@@ -196,6 +210,15 @@ select {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .edit-class-grid .visibleImg img {
+    display: none;
+  }
+  .edit-class-grid .hiddenImg {
+    display: block;
+  }
+  .edit-class-grid .hiddenImg img {
+    width: 100%;
   }
   .createClassImgDiv img {
     width: 50%;

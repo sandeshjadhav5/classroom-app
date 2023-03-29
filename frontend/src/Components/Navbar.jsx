@@ -46,12 +46,12 @@ function Navbar() {
             )}
             {role == "admin" && (
               <li className="nav-item" onClick={handleClose}>
-                <Link to="/create">+ Create Test</Link>
+                <Link to="/create">+ Create Class</Link>
               </li>
             )}
             {role == "admin" && (
               <li className="nav-item" onClick={handleClose}>
-                <Link to="/admin">Tests</Link>
+                <Link to="/admin">All Classes</Link>
               </li>
             )}
             {isAuth && (

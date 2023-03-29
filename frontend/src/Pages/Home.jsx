@@ -16,7 +16,7 @@ function Home() {
         </div>
         <div className="headingText">
           <p>
-            Google Classroom is your all-in-one place for teaching and learning.
+            Classroom App is your all-in-one place for teaching and learning.
             Our easy-to-use and secure tool helps educators manage, measure, and
             enrich learning experiences.
           </p>
