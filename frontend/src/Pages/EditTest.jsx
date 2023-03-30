@@ -106,7 +106,7 @@ function EditTest() {
           <img src={editClass} />
         </div>
       </div>
-      <div id="snackbar"></div>
+      <div id="toast"></div>
     </div>
   );
 }

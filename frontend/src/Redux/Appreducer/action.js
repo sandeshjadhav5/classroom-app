@@ -94,10 +94,13 @@ const editNote = (data) => (dispatch) => {
     )
     .then((res) => {
       console.log(res.data);
-      let x = document.getElementById("snackbar");
+      let x = document.getElementById("toast");
       x.className = "show";
       x.innerText = res.data.msg;
-      x.style.backgroundColor = "green";
+      x.style.backgroundImage =
+        "linear-gradient(to bottom right, #d4fc79 , #96e6a1 )";
+      x.style.color = "black";
+
       setTimeout(function () {
         x.className = x.className.replace("show", "");
         dispatch(editNoteSuccess());
