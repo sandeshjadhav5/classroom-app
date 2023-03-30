@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 function SingeTest() {
   const [test, setTest] = useState({});
   const [loading, setLoading] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const [notes, setNotes] = useState([]);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ function SingeTest() {
 
   const handleDelete = () => {
     var iD = JSON.parse(localStorage.getItem("singleTest"));
-    setLoading(true);
+    setDeleting(true);
     axios
       .delete(`https://odd-tan-mackerel-wig.cyclic.app/tests/delete/${iD}`, {
         headers: {
@@ -49,13 +50,14 @@ function SingeTest() {
       })
       .then((res) => {
         console.log(res);
-        setLoading(false);
+        setDeleting(false);
         if (res.data == "Deleted the Test") {
           navigate(`/admin`);
         }
       })
       .catch((err) => {
-        setLoading(false);
+        setDeleting(false);
+        console.log(err);
       });
   };
   const handleNavigate = () => {
@@ -87,6 +89,14 @@ function SingeTest() {
         <br />
         <br />
         <br />
+        {deleting && (
+          <div className="deleteDiv">
+            <img
+              src="https://cdn.pixabay.com/animation/2022/11/16/11/48/11-48-37-507_512.gif"
+              alt="Deleting Gif"
+            />
+          </div>
+        )}
         <div className="test-heading">
           <div>
             <div></div>
@@ -103,7 +113,9 @@ function SingeTest() {
         )}
         <br />
         <br />
+
         {loading && <h1>Loading...</h1>}
+
         <div className="single-test-body">
           <p>{test.subject}</p>
         </div>
