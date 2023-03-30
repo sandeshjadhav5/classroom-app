@@ -6,7 +6,7 @@ This is a webapp created for Client, where students can join class and study onl
 <img src="https://i.imgur.com/1TPdAo8.jpg" alt="hero Img"/>
 <hr/>
 
-##Tech Stack
+<h2>Tech Stack</h2>
 
 **Client:** 
 
