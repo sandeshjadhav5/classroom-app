@@ -165,57 +165,34 @@ select {
   position: fixed;
   z-index: 1;
   left: 10%;
-  top: 100px;
+  top: 50%;
   font-size: 17px;
 }
 
 #toast.show {
   visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: slide-up 0.5s ease-in-out forwards,
+    slide-down 0.5s ease-in-out forwards 1s;
 }
 
-@-webkit-keyframes fadein {
+@keyframes slide-up {
   from {
-    top: 0;
     opacity: 0;
   }
   to {
-    top: 100px;
     opacity: 1;
+    transform: translateY(0%);
   }
 }
 
-@keyframes fadein {
+@keyframes slide-down {
   from {
-    top: 0;
-    opacity: 0;
+    opacity: 1;
+    transform: translateY(0%);
   }
   to {
-    top: 100px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    top: 100px;
-    opacity: 1;
-  }
-  to {
-    top: 0px;
     opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    top: 100px;
-    opacity: 1;
-  }
-  to {
-    top: 0px;
-    opacity: 0;
+    transform: translateY(100%);
   }
 }
 

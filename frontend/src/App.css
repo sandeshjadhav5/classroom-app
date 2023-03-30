@@ -358,6 +358,9 @@ select {
   .detailsOne {
     grid-template-columns: repeat(1, 1fr);
   }
+  .detailsOne h4 {
+    font-size: small;
+  }
   .detailsOne ul,
   li {
     line-height: 2rem;
@@ -427,5 +430,29 @@ select {
   .formDiv .InputSubmitBtn {
     margin-top: 3rem;
     height: 3rem;
+  }
+  .detailsOne ul,
+  li {
+    line-height: 1rem;
+    color: #7b7f83;
+    font-weight: 300;
+  }
+  .detailsTwo ul,
+  li {
+    line-height: 1rem;
+    color: #7b7f83;
+    font-weight: 300;
+  }
+  .detailsOne div h1 {
+    font-size: large;
+  }
+  .detailsOne div h4 {
+    font-size: smaller;
+  }
+  .detailsTwo div h1 {
+    font-size: large;
+  }
+  .detailsTwo div h4 {
+    font-size: smaller;
   }
 }

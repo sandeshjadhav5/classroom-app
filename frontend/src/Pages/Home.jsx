@@ -29,7 +29,7 @@ function Home() {
           </div>
           <div>
             <Link to="/login">
-              <button className="btn-solid-rh">Sign in to Testroom</button>
+              <button className="btn-solid-rh">Sign in to Classroom</button>
             </Link>
           </div>
         </div>
