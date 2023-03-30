@@ -33,8 +33,11 @@ This is a webapp created for Client, where students can join class and study onl
 - Delete Class
 - Manage , Read Classes/Notes
 - JWT Authentication 
-- bcrypt Password Hashing 
+- bcrypt Password Hashing
 
+## Admin Credentials
+- Email : ```admin@gmail.com```
+- Password : ```admin@123```
 
 ## 🔗 Links
 
