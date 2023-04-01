@@ -74,9 +74,17 @@ Start the server
 <h2>Screenshots</h2>
 <br/>
 <h3 align="center">Homepage</h3>
-<img src="https://i.imgur.com/1TPdAo8.jpg" alt="hero Img"/>
+<img src="https://i.imgur.com/fvSKCGd.jpg" alt="hero Img"/>
+<br/>
 <h3 align="center">Register</h3>
-<img src="https://i.imgur.com/cX6jr7w.png" alt="hero Img"/>
+<img src="https://i.imgur.com/kNm9Ixs.jpg" alt="hero Img"/>
+<br/>
 <h3 align="center">Login</h3>
-<img src="https://i.imgur.com/zVGn7Dt.png" alt="hero Img"/>
+<img src="https://i.imgur.com/6uBAp1O.jpg" alt="hero Img"/>
+<br/>
+<h3 align="center">Classes Page</h3>
+<img src="https://i.imgur.com/YO1PHVf.jpg" alt="hero Img"/>
+
+
+
 
