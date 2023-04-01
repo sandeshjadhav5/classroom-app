@@ -3,8 +3,8 @@
 
 This is a webapp created for Client, where students can join class and study online ,View contents inside class . Teachers can create New Classes,Update and Delete new notes inside this classes.This is Clone of Google Classroom Website.
 <hr/>
-<img src="https://i.imgur.com/1TPdAo8.jpg" alt="hero Img"/>
-<hr/>
+
+
 
 <h2>Tech Stack</h2>
 
@@ -70,4 +70,8 @@ Start the server
 ```bash
   npm run start
 ```
-
+<hr/>
+<h2>Screenshots</h2>
+<br/>
+<h3>Homepage</h3>
+<img src="https://i.imgur.com/1TPdAo8.jpg" alt="hero Img"/>
