@@ -73,5 +73,10 @@ Start the server
 <hr/>
 <h2>Screenshots</h2>
 <br/>
-<h3>Homepage</h3>
+<h3 align="center">Homepage</h3>
 <img src="https://i.imgur.com/1TPdAo8.jpg" alt="hero Img"/>
+<h3 align="center">Register</h3>
+<img src="https://i.imgur.com/cX6jr7w.png" alt="hero Img"/>
+<h3 align="center">Login</h3>
+<img src="https://i.imgur.com/zVGn7Dt.png" alt="hero Img"/>
+
