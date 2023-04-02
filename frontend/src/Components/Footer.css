@@ -93,5 +93,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.2em;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 }
