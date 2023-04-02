@@ -64,6 +64,7 @@ function Login() {
               <span>Email</span>
               <input
                 placeholder="email id"
+                type="email"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />

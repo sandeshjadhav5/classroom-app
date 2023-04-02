@@ -2,6 +2,10 @@
   background-color: #f6f8fa;
   height: 100dvh;
 }
+.singleTestMainDiv {
+  background-image: linear-gradient(to bottom right, #dbdfe0, #f6f8fa, #dbdfe0);
+  padding-bottom: 2rem;
+}
 .main-cards-div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -94,6 +98,7 @@ h2 {
   padding: 1rem;
   border-radius: 0.5rem;
   border: solid 1px #ccc;
+  background-color: white;
 }
 .single-test-loading {
   margin: 0 auto;
@@ -113,6 +118,7 @@ h2 {
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
+  background-color: white;
 }
 .single-test-notes div {
   border: solid 1px #ccc;
@@ -219,6 +225,12 @@ h2 {
   .editTest {
     margin: -6% 11% 0 79%;
   }
+  .single-test-body {
+    width: 80%;
+  }
+  .single-test-notes {
+    width: 80%;
+  }
 }
 @media (min-width: 300px) and (max-width: 480px) {
   .editTest {
@@ -229,5 +241,16 @@ h2 {
     text-align: center;
     padding: 0.3rem;
     border-radius: 100%;
+  }
+  .mainDivTest {
+    padding-bottom: 2rem;
+    height: auto;
+  }
+  .single-test-loading {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .single-test-loading img {
+    width: 100%;
   }
 }

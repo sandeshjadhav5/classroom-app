@@ -84,7 +84,7 @@ function SingeTest() {
     );
   } else {
     return (
-      <div>
+      <div className="singleTestMainDiv">
         <Navbar />
         <br />
         <br />

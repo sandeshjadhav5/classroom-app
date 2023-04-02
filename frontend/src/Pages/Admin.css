@@ -274,4 +274,31 @@ select {
     );
     height: 125vh;
   }
+  #toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 60%;
+    font-size: 17px;
+  }
+
+  #toast.show {
+    visibility: visible;
+    animation: slide-up 0.5s ease-in-out forwards,
+      slide-down 0.5s ease-in-out forwards 1s;
+  }
+  .deleteBtn {
+    margin-left: 0.3rem;
+  }
+  .editTestMainDiv {
+    height: auto;
+    padding-bottom: 0.2rem;
+  }
 }

@@ -435,7 +435,8 @@ select {
   li {
     line-height: 1rem;
     color: #7b7f83;
-    font-weight: 300;
+    font-weight: 100;
+    font-size: 0.6rem;
   }
   .detailsTwo ul,
   li {
