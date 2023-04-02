@@ -57,6 +57,9 @@
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 
 @keyframes gradient {
@@ -85,5 +88,10 @@
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .youCanTest h2 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
   }
 }
