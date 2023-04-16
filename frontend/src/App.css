@@ -411,6 +411,12 @@ select {
   .homePageCards {
     grid-template-columns: repeat(1, 1fr);
   }
+  .detailsOne {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .detailsTwo {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .login-register {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -436,7 +442,7 @@ select {
     line-height: 1rem;
     color: #7b7f83;
     font-weight: 100;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .detailsTwo ul,
   li {

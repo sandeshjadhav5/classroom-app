@@ -14,6 +14,9 @@ function Admin() {
   const isLoading = useSelector((state) => state.AppReducer.isLoading);
   const isAdminLogin = useSelector((state) => state.AuthReducer.isAdminLogin);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
+
+  console.log("tests =>", tests);
+
   useEffect(() => {
     dispatch(getAllTests());
   }, []);

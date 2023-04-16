@@ -16,9 +16,10 @@ function SingeTest() {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const navigate = useNavigate();
   var token = JSON.parse(localStorage.getItem("token")) || "";
-  console.log("notes", notes);
+  console.log("notes => ", notes);
   var id = JSON.parse(localStorage.getItem("singleTest"));
   const role = useSelector((state) => state.AuthReducer.role);
+
   const getSingleTest = () => {
     setLoading(true);
     axios
@@ -60,6 +61,8 @@ function SingeTest() {
         console.log(err);
       });
   };
+
+  const imageData = notes;
   const handleNavigate = () => {
     navigate(`/tests/${id}/edit`);
   };
@@ -135,13 +138,22 @@ function SingeTest() {
             {notes.length > 0 && <h2>Notes</h2>}
             {notes.length == 0 && <h2>No Notes Available</h2>}
             {notes &&
-              notes.map((el) => (
-                <div>
-                  <p>{el.title}</p>
-                  <img src={el.image} />
-                  <p>{el.details}</p>
-                </div>
-              ))}
+              notes.map((el) => {
+                const base64String = btoa(
+                  String.fromCharCode(...new Uint8Array(el.file.data.data))
+                );
+
+                return (
+                  <div key={el._id}>
+                    <p>{el.name}</p>
+                    <img
+                      src={`data:image/png;base64,${base64String}`}
+                      alt={el.description}
+                    />
+                    <p>{el.description}</p>
+                  </div>
+                );
+              })}
           </div>
         )}
       </div>

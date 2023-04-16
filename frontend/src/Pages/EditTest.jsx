@@ -13,9 +13,13 @@ import {
 
 function EditTest() {
   const navigate = useNavigate();
-  const [details, setDetails] = useState("");
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+  // const [details, setDetails] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [image, setImage] = useState("");
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFileName] = useState("");
 
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
@@ -25,15 +29,24 @@ function EditTest() {
   const isEditNoteSuccess = useSelector(
     (state) => state.AppReducer.editNoteSuccess
   );
+
+  const onChangeFile = (e) => {
+    // console.log(e.target.files[0]);
+    e.target.preventDefault();
+    setFileName(e.target.file[0]);
+  };
+
   const handleAddNote = (e) => {
     e.preventDefault();
-    const payload = {
-      title,
-      image,
-      details,
-    };
-    if (payload) {
-      dispatch(editNote(payload));
+
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("fileName", file);
+    console.log("formData==>", formData);
+    if (formData) {
+      dispatch(editNote(formData));
     }
   };
 
@@ -55,20 +68,20 @@ function EditTest() {
           <img src={editClass} />
         </div>
         <div className="edit-form">
-          <form onSubmit={handleAddNote}>
+          <form onSubmit={handleAddNote} encType="multipart/form-data">
             <div>
               <span>Note Title</span>
               <input
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Enter Title"
                 type="text"
                 required
               />
             </div>
             <div>
-              <span>Details</span>
+              <span>Description</span>
               <textarea
-                onChange={(e) => setDetails(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
                 placeholder="Enter Details"
                 type="text"
                 required
@@ -78,9 +91,9 @@ function EditTest() {
             <div>
               <span>Image</span>
               <input
-                onChange={(e) => setImage(e.target.value)}
-                placeholder="Enter Image URL"
-                type="text"
+                onChange={onChangeFile}
+                placeholder="Add File"
+                type="file"
                 required
               />
             </div>

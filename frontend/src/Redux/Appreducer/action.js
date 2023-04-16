@@ -76,22 +76,19 @@ const addTest = (data) => (dispatch) => {
     });
 };
 
-const editNote = (data) => (dispatch) => {
+const editNote = (formData) => (dispatch) => {
   dispatch(editNoteReq());
   var token = JSON.parse(localStorage.getItem("token")) || "";
 
   var id = JSON.parse(localStorage.getItem("singleTest"));
 
   return axios
-    .patch(
-      `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
-      data,
-      {
-        headers: {
-          Authorization: token,
-        },
-      }
-    )
+    .patch(`http://localhost:8080/tests/${id}/addnote`, formData, {
+      headers: {
+        Authorization: token,
+        "Content-Type": "multipart/form-data",
+      },
+    })
     .then((res) => {
       console.log(res.data);
       let x = document.getElementById("toast");
