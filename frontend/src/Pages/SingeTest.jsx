@@ -139,9 +139,7 @@ function SingeTest() {
             {notes.length == 0 && <h2>No Notes Available</h2>}
             {notes &&
               notes.map((el) => {
-                const base64String = btoa(
-                  String.fromCharCode(...new Uint8Array(el.file.data.data))
-                );
+                const base64String = el.file;
 
                 return (
                   <div key={el._id}>

@@ -32,8 +32,8 @@ function EditTest() {
 
   const onChangeFile = (e) => {
     // console.log(e.target.files[0]);
-    e.target.preventDefault();
-    setFileName(e.target.file[0]);
+
+    setFileName(e.target.files[0]);
   };
 
   const handleAddNote = (e) => {
@@ -43,7 +43,7 @@ function EditTest() {
 
     formData.append("name", name);
     formData.append("description", description);
-    formData.append("fileName", file);
+    formData.append("file", file);
     console.log("formData==>", formData);
     if (formData) {
       dispatch(editNote(formData));
