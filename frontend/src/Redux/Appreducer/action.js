@@ -83,12 +83,16 @@ const editNote = (formData) => (dispatch) => {
   var id = JSON.parse(localStorage.getItem("singleTest"));
 
   return axios
-    .patch(`http://localhost:8080/tests/${id}/addnote`, formData, {
-      headers: {
-        Authorization: token,
-        "Content-Type": "multipart/form-data",
-      },
-    })
+    .patch(
+      `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
+      formData,
+      {
+        headers: {
+          Authorization: token,
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    )
     .then((res) => {
       console.log(res.data);
       let x = document.getElementById("toast");

@@ -9,7 +9,12 @@ import {
   addTest,
   addTestLoading,
   addTestSuccess,
+  getTests,
+  editNoteSuccess,
+  editNoteFailure,
+  editNoteReq,
 } from "../Redux/AppReducer/action";
+import axios from "axios";
 
 function EditTest() {
   const navigate = useNavigate();
@@ -45,8 +50,44 @@ function EditTest() {
     formData.append("description", description);
     formData.append("file", file);
     console.log("formData==>", formData);
+    console.log("name--->", name, "description", description, "file", file);
     if (formData) {
-      dispatch(editNote(formData));
+      dispatch(editNoteReq());
+      console.log("insideeeeeeeeeeeeeee");
+      var token = JSON.parse(localStorage.getItem("token")) || "";
+
+      var id = JSON.parse(localStorage.getItem("singleTest"));
+
+      return axios
+        .patch(
+          `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
+          formData,
+          {
+            headers: {
+              Authorization: token,
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          let x = document.getElementById("toast");
+          x.className = "show";
+          x.innerText = res.data.msg;
+          x.style.backgroundImage =
+            "linear-gradient(to bottom right, #d4fc79 , #96e6a1 )";
+          x.style.color = "black";
+
+          setTimeout(function () {
+            x.className = x.className.replace("show", "");
+            dispatch(editNoteSuccess());
+          }, 3000);
+        })
+        .catch((err) => {
+          console.log(err);
+          dispatch(editNoteFailure());
+        });
+      // dispatch(editNote(formData));
     }
   };
 
