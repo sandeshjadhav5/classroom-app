@@ -32,10 +32,11 @@ const editNoteFailure = () => {
 };
 
 const getAllTests = (payload) => (dispatch) => {
+  console.log("invoked");
   dispatch(getTestsLoading());
   var token = JSON.parse(localStorage.getItem("token")) || "";
   return axios
-    .get(`https://odd-tan-mackerel-wig.cyclic.app/tests`, {
+    .get(`http://localhost:8080/tests`, {
       headers: {
         Authorization: token,
       },
