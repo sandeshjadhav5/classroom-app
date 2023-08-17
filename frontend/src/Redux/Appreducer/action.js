@@ -36,7 +36,7 @@ const getAllTests = (payload) => (dispatch) => {
   dispatch(getTestsLoading());
   var token = JSON.parse(localStorage.getItem("token")) || "";
   return axios
-    .get(`http://localhost:8080/tests`, {
+    .get(`https://odd-tan-mackerel-wig.cyclic.app/tests`, {
       headers: {
         Authorization: token,
       },

@@ -79,7 +79,7 @@ function Footer() {
       </div>
       <div className="youCanTest">
         <h3>
-          Developed by <h2>Sandesh Jadhav</h2>
+          2023 <h2>Classroom App</h2>
         </h3>
       </div>
     </div>
