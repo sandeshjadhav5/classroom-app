@@ -36,13 +36,14 @@ const getAllTests = (payload) => (dispatch) => {
   dispatch(getTestsLoading());
   var token = JSON.parse(localStorage.getItem("token")) || "";
   return axios
-    .get(`https://odd-tan-mackerel-wig.cyclic.app/tests`, {
+    .get(`https://nervous-foal-pea-coat.cyclic.cloud/tests/alltests`, {
       headers: {
         Authorization: token,
       },
     })
     .then((res) => {
       console.log(res);
+
       dispatch(getTests(res.data));
     })
     .catch((err) => {
@@ -55,7 +56,7 @@ const addTest = (data) => (dispatch) => {
   var token = JSON.parse(localStorage.getItem("token")) || "";
 
   return axios
-    .post(`https://odd-tan-mackerel-wig.cyclic.app/tests/create`, data, {
+    .post(`https://nervous-foal-pea-coat.cyclic.cloud/tests/create`, data, {
       headers: {
         Authorization: token,
       },
@@ -85,7 +86,7 @@ const editNote = (formData) => (dispatch) => {
 
   return axios
     .patch(
-      `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
+      `https://nervous-foal-pea-coat.cyclic.cloud/tests/${id}/addnote`,
       formData,
       {
         headers: {

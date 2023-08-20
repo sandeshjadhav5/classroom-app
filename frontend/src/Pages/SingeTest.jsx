@@ -24,7 +24,7 @@ function SingeTest() {
   const getSingleTest = () => {
     setLoading(true);
     axios
-      .get(`https://odd-tan-mackerel-wig.cyclic.app/tests/${id}`, {
+      .get(`https://nervous-foal-pea-coat.cyclic.cloud/tests/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -45,7 +45,7 @@ function SingeTest() {
     var iD = JSON.parse(localStorage.getItem("singleTest"));
     setDeleting(true);
     axios
-      .delete(`https://odd-tan-mackerel-wig.cyclic.app/tests/delete/${iD}`, {
+      .delete(`https://nervous-foal-pea-coat.cyclic.cloud/tests/delete/${iD}`, {
         headers: {
           Authorization: token,
         },

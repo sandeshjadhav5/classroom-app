@@ -36,7 +36,7 @@ const adminLogin = (payload) => {
 
 const adminLoginFunction = (payload) => (dispatch) => {
   return axios
-    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/login`, payload)
+    .post(`http://localhost:8080/users/login`, payload)
     .then((res) => {
       console.log(res);
       let token = res.data.token;
@@ -53,7 +53,7 @@ const adminLoginFunction = (payload) => (dispatch) => {
 const loginFunction = (payload) => (dispatch) => {
   dispatch(userLoginReq());
   return axios
-    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/login`, payload)
+    .post(`https://nervous-foal-pea-coat.cyclic.cloud/users/login`, payload)
     .then((res) => {
       console.log(res);
       let token = res.data.token;
@@ -103,7 +103,7 @@ const loginFunction = (payload) => (dispatch) => {
 const registerFunction = (payload) => (dispatch) => {
   dispatch(registerReq());
   return axios
-    .post(`https://odd-tan-mackerel-wig.cyclic.app/users/register`, payload)
+    .post(`https://nervous-foal-pea-coat.cyclic.cloud/users/register`, payload)
     .then((res) => {
       console.log(res);
       if (res.data == "User Registered") {

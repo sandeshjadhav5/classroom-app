@@ -60,7 +60,7 @@ function EditTest() {
 
       return axios
         .patch(
-          `https://odd-tan-mackerel-wig.cyclic.app/tests/${id}/addnote`,
+          `https://nervous-foal-pea-coat.cyclic.cloud/tests/${id}/addnote`,
           formData,
           {
             headers: {
